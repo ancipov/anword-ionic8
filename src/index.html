@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en" class="aio-preview-loading">
+    
+    <head>
+        <meta charset="utf-8">
+        <title id="projectName">
+            Anword
+        </title>
+        <base href="" />
+        <link id="projectIcon" rel="icon" href="favicon.png?v=21183632">
+        <meta id="projectDescription" name="description" content="The application designed to help you learn foreign vocabulary by heart.">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+        <link href="css/jsoneditor.css" rel="stylesheet" />
+        <link href="css/markdown.css" rel="stylesheet" />
+        <link rel="manifest" href="manifest.json" crossOrigin="use-credentials">
+        <meta name="theme-color" content="#ffffff">
+        <link rel="apple-touch-icon" sizes="512x512" href="./assets/images/note.png">
+        <script>
+            if (window.location.hostname !== 'appery.io' && window.location.hostname !== 'localhost') {
+                if ('serviceWorker' in navigator) {
+                    navigator.serviceWorker.register('sw.js?date=__date__')
+                        .then((registration) => {
+                            console.log('service worker installed');
+                            let swStatus = "";
+                            //autoupdate
+                            fetch('https://' + window.location.hostname + '/' + 'sw.js?date=' + Date.now())
+                                .then(response => {
+                                    return response.headers.get('Last-Modified');
+                                })
+                                .then(function(apperyioPWACurrentDate) {
+                                    if (apperyioPWACurrentDate) {
+                                        if (!localStorage.apperyioPWACurrentDate) {
+                                            localStorage.apperyioPWACurrentDate = apperyioPWACurrentDate;
+                                        } else {
+                                            if (localStorage.apperyioPWACurrentDate != apperyioPWACurrentDate) {
+                                                registration.unregister().then(function() {
+                                                    localStorage.apperyioPWACurrentDate = apperyioPWACurrentDate;
+                                                    window.location.reload();
+                                                });
+                                                return;
+                                            }
+                                        }
+                                    }
+                                })
+                                .catch(e => {
+                                    console.error('Error', e);
+                                    if (registration.active && registration.active.state === 'activated') {
+                                        notifyAppReadyForOffline();
+                                    } else {
+                                        showOfflineCapabilityError();
+                                    }
+                                });
+                            // Listener for messages from the Service Worker (for PRECACHE_COMPLETE)
+                            navigator.serviceWorker.addEventListener('message', event => {
+                                if (event.data && event.data.type === 'PRECACHE_COMPLETE') {
+                                    console.log('Client: Received PRECACHE_COMPLETE message from Service Worker!');
+                                    notifyAppReadyForOffline();
+                                }
+                            });
+            
+                            function getServiceWorker() {
+                                return registration.installing || registration.waiting || registration.active;
+                            }
+            
+                            function trackServiceWorkerState() {
+                                var serviceWorker = getServiceWorker();
+                                checkServiceWorkerState();
+                                serviceWorker?.addEventListener('statechange', checkServiceWorkerState);
+                            }
+            
+                            function checkServiceWorkerState() {
+                                var serviceWorker = getServiceWorker();
+                                if (!serviceWorker) {
+                                    setOfflineState("failed");
+                                    return;
+                                }
+                                if (serviceWorker.state === 'redundant') {
+                                    showOfflineCapabilityError('Service Worker failed to load or update for offline support.');
+                                } else if (serviceWorker.state === 'activated') {
+                                    notifyAppReadyForOffline();
+                                } else if (["installing", "installed", "activating"].indexOf(serviceWorker.state) !== -1) {
+                                    setOfflineState("loading");
+                                }
+                            }
+            
+                            function showOfflineCapabilityError(message = 'Offline functionality may not be available.') {
+                                console.log('Warning: ' + message);
+                                setOfflineState("failed");
+                            }
+            
+                            function notifyAppReadyForOffline() {
+                                setOfflineState("ready");
+                                console.log('App is ready for offline usage!');
+                            }
+            
+                            function setOfflineState(value) {
+                                swStatus = value;
+                                window.dispatchEvent(
+                                    new CustomEvent("sw-status", {
+                                        bubbles: false,
+                                        detail: {
+                                            swStatus: swStatus
+                                        },
+                                    })
+                                );
+                            }
+                            window.addEventListener("request-sw-status", (event) => {
+                                const callback = event.detail?.callback;
+                                if (typeof callback === "function") {
+                                    callback(swStatus);
+                                }
+                            });
+                        })
+                        .catch(err => console.error('Error', err));
+                }
+            }
+        </script>
+        <script>
+            if (!location.host.includes("appery.io")) {
+                document.documentElement.classList.remove("aio-preview-loading");
+            }
+        </script>
+        <style type="text/css">
+            html.aio-preview-loading:not(.hydrated) { height: 100%; width: 100%; margin: 0;
+            padding: 0; background: url(./assets/images/buildstartprogress.gif); background-position:
+            50% 50%; background-repeat: no-repeat; background-color: white; }
+        </style>
+    </head>
+    
+    <body class="Default ionic8" data-theme-name="Default">
+        <script>
+            var apperyioIsLiveDebug = location.href.includes("preview_build=true") || location.href.includes("hot_reload=true");
+            if (apperyioIsLiveDebug) {
+                var isIOS = window.navigator.vendor.includes("Apple");
+                if (isIOS && location.href.startsWith("https://")) {
+                    location.href = location.href.replace("https://", "http://");
+                } else {
+                    const script = document.createElement("script");
+                    script.src = isIOS? "ionic://localhost/cordova.js": "https://localhost/cordova.js";
+                    script.id = "localhost_cordova_js";
+                    document.head.append(script);
+                }
+            }
+        </script>
+        <!-- External js libraries -->
+        <script src="assets/js/webcam.js">
+        </script>
+        <app-root>
+        </app-root>
+        <noscript>
+            JavaScript is disabled. Please enable JavaScript to use this site.
+        </noscript>
+    </body>
+
+</html>

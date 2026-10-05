@@ -1,0 +1,22 @@
+
+
+
+
+/* Custom SCSS */
+aio-file-picker.clickable-image {
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  cursor: pointer;
+  
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--ion-color-primary);
+  border-radius: 20px;
+  display: inline-block;
+  width: 200px;
+  height: 35px;  
+}
+
+aio-file-picker.clickable-image:active  {
+  transform: scale(0.95);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}

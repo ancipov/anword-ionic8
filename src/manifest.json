@@ -1,0 +1,20 @@
+{
+    "short_name": "Anword",
+    "name": "Anword",
+    "description": "",
+    "display": "fullscreen",
+    "orientation": "any",
+    "start_url": "/",
+    "scope": "/",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "icons": [
+
+            {
+                "src": "assets/images/note.png",
+                "type": "image/png",
+                "sizes": "512x512"
+            }     
+            
+    ]
+}

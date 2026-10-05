@@ -1,0 +1,95 @@
+<ion-header _aio-AB7C30AB>
+    <ion-toolbar _aio-074ECE14 #j_460>
+        <ion-buttons #j_461 _aio-CDB5CDC5 slot="end" collapse="true">
+            <ion-menu-button _aio-84A593AB #j_462>
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title _aio-B4A24AEE #j_463>
+            {{ 'Dictionaries' | translate }}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content _aio-6A840C64 class="ion-padding" #_aio_content>
+    <ion-refresher _aio-C7E0A926 #j_430 slot="fixed" class="ion-hide-md-up" (ionRefresh)="refresh($event)">
+        <ion-refresher-content _aio-33F83589 #j_431>
+        </ion-refresher-content>
+    </ion-refresher>
+    <ion-item #j_432 _aio-15A30A93>
+        <ion-toggle _aio-0A8A0FF9 #j_434 value="Toggle1_value" name="Toggle1" [(ngModel)]="$v.library"
+        (ionChange)="changeLibrary()">
+            <ion-label _aio-DDC59B77 #j_433>
+                Library
+            </ion-label>
+        </ion-toggle>
+    </ion-item>
+    <div _aio-E30C9B33 #j_435 *ngIf="!$v.library">
+        <ion-list _aio-1CE02AC0 #j_436 #list="">
+            <ion-item-sliding #j_437__sliding *ngFor="let item of $v.dictionaries">
+                <ion-item _aio-09C8DEFC #j_437 button="true" detail="false" [routerLink]="['/pages/dictionaries', item._id]">
+                    <ion-label _aio-4BC1BD85 #j_438 *ngIf="item._id">
+                        <div _aio-3D08658D #j_439>
+                            {{item.name}} ({{item.knownWords || 0}}) - {{item.words?.length}}
+                        </div>
+                        <ion-note _aio-E827C173 #j_440>
+                            {{item.description}}
+                        </ion-note>
+                    </ion-label>
+                    <ion-button _aio-DEE7533E #j_441 expand="block" fill="outline" shape="round" (click)="play(item, $event)">
+                        <ion-icon _aio-DEE7533E #j_441__icon name="play-outline" slot="icon-only">
+                        </ion-icon>
+                    </ion-button>
+                    <ion-label _aio-052BA156 #j_444 *ngIf="!item._id">
+                        <h3 _aio-0AB15498 #j_445>
+                            <ion-skeleton-text _aio-2E505FDA #j_446 animated="">
+                            </ion-skeleton-text>
+                        </h3>
+                        <p _aio-900956EE #j_447>
+                            <ion-skeleton-text _aio-D51CB05D #j_448 animated="">
+                            </ion-skeleton-text>
+                        </p>
+                    </ion-label>
+                </ion-item>
+                <ion-item-options _aio-E79EBF31 #j_442 side="end">
+                    <ion-item-option _aio-674D93B7 #j_443 color="danger" (click)="deleteItem(item, list)">
+                        <ion-icon #j_443__icon slot="icon-only" name="trash-bin-sharp">
+                        </ion-icon>
+                        {{ 'Delete' | translate }}
+                    </ion-item-option>
+                </ion-item-options>
+            </ion-item-sliding>
+        </ion-list>
+        <h5 _aio-C1DC8125 #j_449 *ngIf="$v.dictionaries && !$v.dictionaries.length">
+            {{ 'No items' | translate }}
+        </h5>
+    </div>
+    <ion-searchbar _aio-90AED255 #j_450 placeholder="{{ 'Search' | translate }}" *ngIf="$v.library"
+    [(ngModel)]="keyword">
+    </ion-searchbar>
+    <ion-list _aio-C28E536E #j_451 *ngIf="$v.library">
+        <ion-item _aio-2CFF7214 #j_452 button="true" detail="false" [hidden]="item.hide || !$a.hasString(item.name, keyword)"
+        *ngFor="let item of $v.libraryDictionaries">
+            <ion-label _aio-361200EC #j_453 (click)="openLib(item)">
+                <div _aio-23A0008B #j_454>
+                    {{item.name}} - {{item.words?.length}}
+                </div>
+                <ion-note _aio-E2FDE5A3 #j_455>
+                    {{item.description}}
+                </ion-note>
+            </ion-label>
+            <ion-button _aio-7F79E82B #j_456 expand="block" color="success" (click)="addLibrary(item, $event)">
+                <ion-icon _aio-7F79E82B #j_456__icon name="add-sharp" slot="icon-only">
+                </ion-icon>
+            </ion-button>
+        </ion-item>
+    </ion-list>
+    <ion-fab _aio-A88B466C #j_457 slot="fixed" *ngIf="!$v.library" horizontal="end"
+    vertical="bottom" (click)="addItem()" [class.aio-disabled]="$a.offline">
+        <ion-button _aio-C20473E3 #j_458 expand="block" shape="round">
+            <ion-icon _aio-C20473E3 #j_458__icon name="add-sharp" slot="start">
+            </ion-icon>
+            {{ 'Add' | translate }}
+        </ion-button>
+    </ion-fab>
+    <aio-tester-buttons slot="fixed">
+    </aio-tester-buttons>
+</ion-content>

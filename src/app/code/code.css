@@ -1,0 +1,24 @@
+
+/* Styles properties */
+ion-content[_aio-1A5B4987] {
+	text-align: center;
+	max-width: 400px;
+	align-self: center;
+}
+h1[_aio-144CAF9B] {
+	text-align: center;
+	margin-bottom: 40px;
+}
+code-input[_aio-0D1C281C] {
+	--color:var(--ion-color-light-contrast);
+}
+ion-button[_aio-C0D6669D] {
+	margin-top: 20px;
+}
+a[_aio-4781222A] {
+	display: block;
+	text-align: center;
+	cursor: pointer;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}

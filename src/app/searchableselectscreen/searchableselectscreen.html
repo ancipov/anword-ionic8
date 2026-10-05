@@ -1,0 +1,55 @@
+<ion-header _aio-847E07E6>
+    <ion-toolbar _aio-F60D4D07 #j_327>
+        <ion-title _aio-1BD68C49 #j_329>
+            Searchable Select
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content _aio-8EBA9A0A class="ion-padding" #_aio_content>
+    <h1 _aio-825E5F0A #j_311>
+        Select object
+    </h1>
+    <ion-item _aio-9EE24F7F #j_312 class="ion-no-padding">
+        <ion-label _aio-78216568 #j_313 class="label-header" position="stacked">
+            {{ 'State' | translate }}
+        </ion-label>
+        <component-selectable-search #j_314 [itemValueField]="'abbreviation'" name="selectState"
+        [itemTextField]="'name'" [selectObject]="true" [items]="states" [placeholder]="'Select State'"
+        [canSearch]="true" [(ngModel)]="selectedState" style="width: 100%;">
+        </component-selectable-search>
+    </ion-item>
+    <json-editor _aio-D97AE53E #j_315 *ngIf="selectedState" [data]="selectedState" [options]="{modes: ['view', 'code', 'text', 'tree']}">
+    </json-editor>
+    <h1 _aio-ABA7B4F7 #j_316>
+        Select value
+    </h1>
+    <ion-item _aio-26E216AD #j_317 class="ion-no-padding">
+        <ion-label _aio-83B00423 #j_318 class="label-header" position="stacked">
+            {{ 'State' | translate }}
+        </ion-label>
+        <component-selectable-search #j_319 [itemValueField]="'abbreviation'" name="selectValue"
+        [itemTextField]="'name'" [selectObject]="false" [items]="states" [placeholder]="'Select State'"
+        [canSearch]="true" [(ngModel)]="selectedValue" style="width: 100%;">
+        </component-selectable-search>
+    </ion-item>
+    <div _aio-4AA18CF8 #j_320 *ngIf="selectedValue">
+        {{'Selected Value:' | translate }} {{selectedValue}}
+    </div>
+    <h1 _aio-0D6C2591 #j_321>
+        Select from array of strings
+    </h1>
+    <ion-item _aio-F0DE9711 #j_322 class="ion-no-padding">
+        <ion-label _aio-B8EEA3A3 #j_323 class="label-header" position="stacked">
+            {{ 'Color' | translate }}
+        </ion-label>
+        <component-selectable-search #j_324 name="selectedColor" [selectObject]="false"
+        [items]="['red', 'blue', 'green']" [placeholder]="'Select Color'" [canSearch]="true"
+        [(ngModel)]="selectedColor" style="width: 100%;">
+        </component-selectable-search>
+    </ion-item>
+    <div _aio-A4C944A3 #j_325 *ngIf="selectedColor">
+        {{'Selected Color:' | translate }} {{selectedColor}}
+    </div>
+    <aio-tester-buttons slot="fixed">
+    </aio-tester-buttons>
+</ion-content>

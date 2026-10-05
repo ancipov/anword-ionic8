@@ -1,0 +1,95 @@
+
+/* Styles properties */
+ion-menu[_aio-A19D13F4] {
+	--side-max-width: 300px;
+}
+ion-menu[_aio-A19D13F4]::part(container) {
+	--max-width: 300px;
+}
+[_aio-2F4BFCF0] {
+	white-space:nowrap;
+}
+[_aio-F4013AA1] {
+	white-space:nowrap;
+}
+[_aio-F00A08A2] {
+	white-space:nowrap;
+}
+[_aio-73080692] {
+	white-space:nowrap;
+}
+ion-header[_aio-A56247EF] {
+	border-style: solid;
+	border-color: var(--ion-color-light);
+}
+ion-toolbar[_aio-519604DD] {
+	--background: var(--ion-background-color);
+}
+ion-avatar[_aio-725EFE9F] {
+	display: inline-block;
+	margin-left: 10px;
+}
+div[_aio-4EE354B1] {
+	display: inline-block;
+	font-size: 18px;
+	margin-left: 10px;
+}
+div[_aio-4EE354B1] {
+	white-space:nowrap;
+}
+ion-toolbar[_aio-A1420AD6] {
+	--background: var(--ion-background-color);
+}
+ion-grid[_aio-60834500] {
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+ion-row[_aio-40E788E1] {
+	overflow-x:hidden;
+}
+ion-col[_aio-1F383B47] {
+	padding-left: 10px;
+}
+div[_aio-CC725719] {
+	padding-bottom: 10px;
+}
+div[_aio-CC725719] {
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+ion-row[_aio-144EFA97] {
+	overflow-x:hidden;
+}
+ion-col[_aio-ECE67857] {
+	padding-left: 10px;
+}
+div[_aio-858C1790] {
+	padding-bottom: 10px;
+}
+div[_aio-858C1790] {
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+ion-col[_aio-CD28E327] {
+	padding-left: 10px;
+}
+div[_aio-EF96DB60] {
+	padding-bottom: 10px;
+}
+div[_aio-EF96DB60] {
+	white-space:nowrap;
+}
+div[_aio-7BEEF5D0] {
+	text-align: center;
+	font-size: 12px;
+	border-style: solid;
+	border-color: var(--ion-color-light);
+	border-top-width: 1px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+}

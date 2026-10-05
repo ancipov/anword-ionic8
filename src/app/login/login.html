@@ -1,0 +1,106 @@
+<ion-content _aio-C0B0F951 forceOverscroll="false" [class.aio-disabled]="$a.offline"
+#_aio_content>
+    <div class="aio-slidingcontent-wrapper" [class.loaded]="loaded" [class.delayloaded]="_aioDelayLoaded"
+    aioScreenSliding="login" [class.skipsliding]="$a.internalSettings?._aioSlideShown?.['login']">
+        <div class="aio-slidingcontent-container">
+            <header class="aio-slidingcontent-header">
+                <div class="aio-slidingcontent-bg">
+                </div>
+            </header>
+            <main _aio-C0B0F951 class="aio-slidingcontent-content-section">
+                <div _aio-C0B0F951 class="aio-slidingcontent-content">
+                    <div _aio-623F795C #j_377 class="container">
+                        <div _aio-4DDDE9EF #j_378 class="left-panel">
+                            <div _aio-BAD6EDB2 #j_379 class="ion-hide-lg-down">
+                                {{'©' | translate }} {{$a.moment().year()}} {{'COMPANY_NAME' | translate}} {{'All
+                                rights reserved.' | translate}}
+                            </div>
+                        </div>
+                        <div _aio-2E5C1A90 #j_380 class="ion-padding right-panel">
+                            <form _aio-D4BEEBCA #loginForm="ngForm" viewchild_name='loginForm' #loginForm_el
+                            [aioFormChange]="loginForm" class="main-form">
+                                <img _aio-7F7BBEF2 #j_382 src="assets/images/logo.png" alt="{{ 'Image error' | translate }}"
+                                *ngIf="$a.smUp">
+                                <h1 _aio-F65AE921 #j_383>
+                                    {{ 'Login...' | translate }}
+                                </h1>
+                                <ion-item #j_384 _aio-955B3F06 lines="full" class="ion-no-padding">
+                                    <ion-input labelPlacement="stacked" _aio-36D28EB6 #j_387="ngModel" #j_387_el autocomplete="new-password"
+                                    maxlength="50" name="Input2" placeholder="{{ 'Enter Username' | translate }}" type="email"
+                                    required="true" aioControlValidation="maxLength:50|||email" aioValidationShowMessage="true"
+                                    [(ngModel)]="user.username">
+                                        <ion-label _aio-777AF1B2 #j_385 slot="label" color="primary">
+                                            {{ 'Username (email)' | translate }}
+                                        </ion-label>
+                                        <ion-icon _aio-276EA39F #j_386 name="person" slot="end">
+                                        </ion-icon>
+                                    </ion-input>
+                                </ion-item>
+                                <ion-item #j_388 _aio-77534585 lines="full" class="ion-no-padding" [aioPasswordShow]>
+                                    <ion-input labelPlacement="stacked" _aio-C3551BD7 #j_390="ngModel" #j_390_el autocomplete="new-password"
+                                    clearOnEdit="false" maxlength="50" name="Input1" placeholder="{{ 'Enter Password' | translate }}"
+                                    type="password" required="true" aioControlValidation="maxLength:50|||strongPassword"
+                                    aioValidationShowMessage="true" [(ngModel)]="user.password" (keyup.enter)="login()">
+                                        <ion-label _aio-517A454D #j_389 slot="label" color="primary">
+                                            {{ 'Password' | translate }}
+                                        </ion-label>
+                                        <ion-icon name="eye" slot="end" data-action="show-hide">
+                                        </ion-icon>
+                                    </ion-input>
+                                </ion-item>
+                                <a _aio-62D65629 #j_391 (click)="$a.navigation.root(&quot;forgotpassword&quot;, [], {replaceUrl: true})">
+                                {{ 'Forgot Password?' | translate }}
+                                </a>
+                                <ion-item #j_392 _aio-75682229 lines="none" class="ion-no-padding">
+                                    <ion-checkbox _aio-C097BAF8 #j_394="ngModel" #j_394_el name="Checkbox" value="Checkbox"
+                                    [(ngModel)]="autoLogin">
+                                        <ion-label _aio-A9418A4D #j_393>
+                                            {{ 'Remember me' | translate }}
+                                        </ion-label>
+                                    </ion-checkbox>
+                                </ion-item>
+                                <ion-button _aio-879217B4 #j_395 expand="block" type="submit" (click)="login()">
+                                    {{ 'Login' | translate }}
+                                </ion-button>
+                                <ion-button _aio-78A7E010 #j_396 fill="clear" *ngIf="$v.settings?.biometricLogin && isBiometricAvailable && $a.isIOS()"
+                                (click)="biometricLogin()">
+                                    <ion-icon _aio-78A7E010 #j_396__icon slot="icon-only" src="assets/images/faceid.svg">
+                                    </ion-icon>
+                                </ion-button>
+                                <ion-button _aio-C5875DF5 #j_397 fill="clear" *ngIf="$v.settings?.biometricLogin && isBiometricAvailable && $a.isAndroid()"
+                                (click)="biometricLogin()">
+                                    <ion-icon _aio-C5875DF5 #j_397__icon name="finger-print-sharp" slot="icon-only">
+                                    </ion-icon>
+                                </ion-button>
+                                <div _aio-6EA7A124 #j_398 *ngIf="$v.settings?.biometricLogin && isBiometricAvailable">
+                                    {{$a.isIOS() ? 'Face ID Login' : 'Biometric Login'}}
+                                </div>
+                                <a _aio-DEBFC1D8 #j_399 [routerLink]="['/signup']" (click)="$a.navigation.root(&quot;signup&quot;, [], {replaceUrl: true})">
+                                {{ 'Create Account' | translate }}
+                                </a><!--
+                                --><a _aio-56DFBA85 #j_400 (click)="$v.fullLogout()">
+                                {{ 'Login Anonymously' | translate }}
+                                </a>
+                                <div _aio-26F76921 #j_401 class="aio-component-divider">
+                                </div>
+                                <div _aio-F71262F1 #j_402>
+                                    <ion-button _aio-6517F2A1 #j_403 fill="outline" type="submit" *ngIf="$a.isMobile()"
+                                    (click)="googleLogin()">
+                                        <ion-icon _aio-6517F2A1 #j_403__icon name="logo-google" slot="start" src="assets/images/Google__G__logo.svg">
+                                        </ion-icon>
+                                        {{ 'Sign in with Google' | translate }}
+                                    </ion-button>
+                                    <asl-google-signin-button _aio-A7D23631 #j_404 *ngIf="!$a.isMobile()" theme="{{$a.theme.getCurrent() == &quot;Dark&quot; ? &quot;filled_black&quot; : &quot;outline&quot; }}"
+                                    type="standard" text="signin_with" width="250">
+                                    </asl-google-signin-button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <aio-tester-buttons slot="fixed">
+    </aio-tester-buttons>
+</ion-content>

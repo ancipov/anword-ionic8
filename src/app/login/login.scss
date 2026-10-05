@@ -1,0 +1,25 @@
+
+
+
+
+/* Custom SCSS */
+@media (max-width: 767px) {
+    .container div.left-panel {
+        display: none;
+    }
+    .container div.right-panel {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    div.container {
+        height: auto;
+    }
+    .container div.right-panel {
+        overflow-y: visible;
+    }
+    .container form.main-form {
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,48 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "ES2023",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "ES2023",
+      "dom"
+    ],
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+
+    "strict": false,
+    "noImplicitOverride": false,
+    "noPropertyAccessFromIndexSignature": false,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": false,
+    "forceConsistentCasingInFileNames": false,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "noUnusedLocals": false,
+    "exactOptionalPropertyTypes": false,
+    "useDefineForClassFields": true,
+    "noUnusedParameters": false
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true,
+
+    "enableI18nLegacyMessageIdFormat": true,
+    "strictInputAccessModifiers": false,
+    "strictTemplates": false,
+    "strictDomEventTypes": false,
+    "typeCheckHostBindings": false,
+    "strictStandalone": false
+  }
+}

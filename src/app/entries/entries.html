@@ -1,0 +1,119 @@
+<ion-header _aio-C7B8752E>
+    <ion-toolbar _aio-7DD133B4 #j_150>
+        <ion-buttons #j_151 _aio-B057AFF3 slot="end" collapse="true">
+            <ion-menu-button _aio-6B97696A #j_152>
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title _aio-8F6B1952 #j_153>
+            {{ 'Entries' | translate }}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content _aio-E54411BF class="ion-padding" #_aio_content>
+    <ion-refresher _aio-2CAC3563 #j_120 slot="fixed" class="ion-hide-md-up" (ionRefresh)="refresh($event)">
+        <ion-refresher-content _aio-433B7A40 #j_121>
+        </ion-refresher-content>
+    </ion-refresher>
+    <div _aio-3445092A #j_122 class="ion-hide-md-up">
+        <ion-searchbar _aio-77E78B4A #j_123 placeholder="{{ 'Search' | translate }}" [(ngModel)]="keyword">
+        </ion-searchbar>
+        <ion-list _aio-0B6BD2FF #j_124 #list="">
+            <ion-item-sliding #j_125__sliding *ngFor="let item of items">
+                <ion-item _aio-B8DA473B #j_125 button="true" detail="false" (click)="selectItem(item)"
+                [hidden]="!$a.hasString(item.name, keyword)">
+                    <ion-label _aio-D500E046 #j_126 *ngIf="item._id">
+                        <div _aio-C44B6256 #j_127>
+                            {{item.name}}
+                        </div>
+                        <ion-note _aio-31B8DF1C #j_128>
+                            {{item.description}}
+                        </ion-note>
+                    </ion-label>
+                    <ion-label _aio-D53D5A1A #j_131 *ngIf="!item._id">
+                        <h3 _aio-765B1134 #j_132>
+                            <ion-skeleton-text _aio-427DCC24 #j_133 animated="">
+                            </ion-skeleton-text>
+                        </h3>
+                        <p _aio-0EFA3AB7 #j_134>
+                            <ion-skeleton-text _aio-920857BD #j_135 animated="">
+                            </ion-skeleton-text>
+                        </p>
+                    </ion-label>
+                </ion-item>
+                <ion-item-options _aio-FFE1F653 #j_129 side="end">
+                    <ion-item-option _aio-1320C02C #j_130 color="danger" (click)="deleteItem(item, list)">
+                        <ion-icon #j_130__icon slot="icon-only" name="trash-bin-sharp">
+                        </ion-icon>
+                        {{ 'Delete' | translate }}
+                    </ion-item-option>
+                </ion-item-options>
+            </ion-item-sliding>
+        </ion-list>
+        <h5 _aio-8BBA80AF #j_136 *ngIf="items && !items.length">
+            {{ 'No items' | translate }}
+        </h5>
+    </div>
+    <div _aio-68AB25B7 #j_137 class="ion-hide-md-down">
+        <ion-button _aio-25BF0EE2 #j_138 (click)="refresh()">
+            <ion-icon _aio-25BF0EE2 #j_138__icon name="refresh-sharp" slot="start">
+            </ion-icon>
+            {{ 'Refresh' | translate }}
+        </ion-button>
+        <ion-button _aio-9D5F939C #j_139 (click)="addItem()">
+            <ion-icon _aio-9D5F939C #j_139__icon name="add-outline" slot="start">
+            </ion-icon>
+            {{ 'Add Entity' | translate }}
+        </ion-button>
+        <ion-searchbar _aio-8A96E670 #j_140 placeholder="{{ 'Search' | translate }}" [(ngModel)]="keyword"
+        (ionChange)="filter()">
+        </ion-searchbar>
+        <ngx-datatable _aio-47EB0463 aioDatatableResizer class="bootstrap" #j_141 [cssClasses]="$aio_j_141.cssClasses"
+        [messages]="$aio_j_141.messages" [columnMode]="'flex'" [headerHeight]="$aio_j_141.headerHeight"
+        [footerHeight]="$aio_j_141.footerHeight" [rowHeight]="$aio_j_141.rowHeight" [loadingIndicator]="$aio_j_141.isLoading"
+        [count]="$aio_j_141.count" [offset]="$aio_j_141.offset" [limit]="$aio_j_141.limit"
+        [sorts]="[$aio_j_141.sorts]" (sort)="$aio_DataTableOnSort_j_141($event)" [rows]="items">
+            <ngx-datatable-column _aio-10146C7A [name]="'Name' | translate" [prop]="'name'"
+            [flexGrow]="5">
+                <ng-template let-value="value" let-currentItem="row" let-row="row" ngx-datatable-cell-template>
+                    {{value}}
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column _aio-18CF84FB [name]="'Description' | translate" [prop]="'description'"
+            [flexGrow]="8">
+                <ng-template let-value="value" let-currentItem="row" let-row="row" ngx-datatable-cell-template>
+                    {{value}}
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column _aio-FB0496C6 [name]="'Date' | translate" [prop]="'date'"
+            [flexGrow]="8">
+                <ng-template let-value="value" let-currentItem="row" let-row="row" ngx-datatable-cell-template>
+                    {{value | date :'mediumDate' }}
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column _aio-11136BE7 [name]="'Edit' | translate" [flexGrow]="1">
+                <ng-template let-value="value" let-currentItem="row" let-row="row" ngx-datatable-cell-template>
+                    <ion-icon name="pencil" size="large" style="cursor: pointer;" (click)="selectItem(row)"
+                    color="dark">
+                    </ion-icon>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column _aio-0C9FF4CB [name]="'Delete' | translate" [flexGrow]="1">
+                <ng-template let-value="value" let-currentItem="row" let-row="row" ngx-datatable-cell-template>
+                    <ion-icon name="trash-bin" size="large" style="cursor: pointer;" (click)="deleteItem(row)"
+                    color="danger">
+                    </ion-icon>
+                </ng-template>
+            </ngx-datatable-column>
+        </ngx-datatable>
+    </div>
+    <ion-fab _aio-73611B1C #j_147 slot="fixed" class="ion-hide-md-up" horizontal="end"
+    vertical="bottom" (click)="addItem()" [class.aio-disabled]="$a.offline">
+        <ion-button _aio-2B6DF550 #j_148 expand="block" shape="round">
+            <ion-icon _aio-2B6DF550 #j_148__icon name="add-sharp" slot="start">
+            </ion-icon>
+            {{ 'Add' | translate }}
+        </ion-button>
+    </ion-fab>
+    <aio-tester-buttons slot="fixed">
+    </aio-tester-buttons>
+</ion-content>

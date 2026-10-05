@@ -1,0 +1,30 @@
+
+/* Styles properties */
+ion-content[_aio-6A840C64] {
+	max-width: 800px;
+	align-self: center;
+}
+[_aio-DDC59B77] {
+	font-weight: bold;
+}
+div[_aio-3D08658D] {
+	color: var(--ion-color-dark);
+}
+ion-button>ion-icon[_aio-DEE7533E] {
+	width: 30px;
+	height: 30px;
+}
+ion-skeleton-text[_aio-2E505FDA] {
+	width: 50%;
+}
+ion-skeleton-text[_aio-D51CB05D] {
+	width: 80%;
+}
+h5[_aio-C1DC8125] {
+	text-align: center;
+	color: var(--ion-color-medium);
+}
+ion-button>ion-icon[_aio-7F79E82B] {
+	width: 30px;
+	height: 30px;
+}

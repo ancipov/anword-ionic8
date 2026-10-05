@@ -1,0 +1,42 @@
+
+/* Styles properties */
+[_aio-E6FBC17B] {
+	font-weight: bold;
+}
+:host ::ng-deep [_aio-0993A28F] ion-button {
+	width:100%;
+}
+swiper-slide[_aio-8BE2C743] {
+	display: flex;
+	text-align: center;
+	position: relative;
+}
+swiper-slide[_aio-8BE2C743] {
+	align-items:center;
+}
+img[_aio-6A2A4131] {
+	width: 100%;
+	max-width: 800px;
+}
+ion-button[_aio-D0CE9CF1] {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+ion-button>ion-icon[_aio-D0CE9CF1] {
+	width: 40px;
+	height: 40px;
+}
+h5[_aio-241039F8] {
+	text-align: center;
+	color: var(--ion-color-medium);
+}
+ion-footer[_aio-5179D473] {
+	padding-top: 16px;
+	padding-right: 16px;
+	padding-bottom: 16px;
+	padding-left: 16px;
+}
+ion-footer[_aio-5179D473] {
+	text-align:center;
+}

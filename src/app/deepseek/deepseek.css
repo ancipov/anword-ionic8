@@ -1,0 +1,75 @@
+
+/* Styles properties */
+ion-content[_aio-8E3F6C34] {
+	--padding-top: 16px;
+	--padding-end: 16px;
+	--padding-bottom: 16px;
+	--padding-start: 16px;
+}
+div[_aio-A4103C39] {
+	display: inline-block;
+	background-color: var(--ion-color-light);
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	margin-bottom: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	width: 100%;
+	max-width: 100%;
+}
+markdown[_aio-1E465AC8] {
+	display: block;
+	margin-top: 4px;
+}
+div[_aio-4EC7A884] {
+	text-align: right;
+}
+div[_aio-941BB03A] {
+	display: inline-block;
+	background-color: var(--ion-color-success);
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	margin-bottom: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	max-width: 100%;
+}
+div[_aio-1F53BBFA] {
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+div[_aio-48DB88F3] {
+	display: inline-block;
+	background-color: var(--ion-color-light);
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	margin-bottom: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	width: 100%;
+	max-width: 100%;
+}
+ion-skeleton-text[_aio-F86942B8] {
+	margin-top: 16px;
+	margin-bottom: 16px;
+	width: 100%;
+	height: 15px;
+}
+ion-input[_aio-B396563B] ::ng-deep .native-wrapper input {
+	margin-left: 10px;
+}
+ion-button[_aio-4E33E544]::part(native) {
+	color: var(--ion-color-primary);
+}

@@ -1,0 +1,38 @@
+
+/* Styles properties */
+ion-content[_aio-FC575B45] {
+	--background: none;
+	background-image: url('../../assets/images/LightGreyWallpaper.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	text-align: center;
+}
+form[_aio-F227F6E5] {
+	display: inline-block;
+	width: 100%;
+	max-width: 800px;
+}
+h3[_aio-BB960A75] {
+	margin-bottom: 50px;
+}
+[_aio-9CDCCA3D] {
+	font-weight: bold;
+}
+ion-item[_aio-BB32CC7A] {
+	margin-bottom:10px;
+}
+[_aio-6B6A1E9B] {
+	font-weight: bold;
+}
+ion-button[_aio-6388E8B1] {
+	margin-top: 20px;
+	width: 100%;
+	max-width: 300px;
+}
+ion-button[_aio-6388E8B1] {
+	display:inline-block;
+}
+div[_aio-7C3B65EF] {
+	text-align: center;
+	font-size: 12px;
+}

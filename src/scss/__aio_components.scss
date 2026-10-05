@@ -1,0 +1,436 @@
+
+ion-app.mobile .aio-mobile-hide,
+ion-app.web-browser .aio-web-browser-hide,
+.aioHidden,
+[hidden] {
+	display: none!important;
+}
+.aio-disabled {
+	filter: grayscale(100%);
+	opacity: 0.5;
+	pointer-events: none;
+}
+.aio-readonly {
+	cursor: not-allowed;
+	pointer-events: none;
+}
+.aio-validation-error {
+	color: var(--ion-color-danger);
+	--padding-top: 5px;
+	--padding-bottom: 5px;
+	padding: var(--padding-top, 5px) var(--padding-end, 15px) var(--padding-bottom, 5px) var(--padding-start, 15px);
+	text-align: start;
+}
+body.aio-keyboard-open ion-content {
+	--keyboard-offset: var(--aio-keyboard-offset, 0px)!important;
+}
+body.aio-keyboard-open .ion-page:has( > ion-footer) ion-content {
+	--keyboard-offset: calc(var(--aio-keyboard-offset, 75px) - 75px)!important;
+}
+ion-content.aio-vertical-align-center::part(scroll),
+ion-content.aio-vertical-align-bottom::part(scroll) {
+	display: flex;
+	padding-top: 0px;
+}
+ion-content.aio-vertical-align-center::part(scroll) {
+	align-items: center;
+	padding-bottom: 10px;
+}
+ion-content.aio-vertical-align-bottom::part(scroll) {
+	align-items: flex-end;
+	padding-bottom: 0px;
+}
+.aio-vertical-align-wrapper {
+	flex: auto;
+}
+ion-item.item-label-stacked.item-input > ion-icon[slot="start"],
+ion-item.item-label-stacked.item-input > ion-icon[slot="end"],
+ion-item.item-label-floating.item-input > ion-icon[slot="start"],
+ion-item.item-label-floating.item-input > ion-icon[slot="end"],
+ion-item.item-label-floating::part(detail-icon),
+ion-item.item-label-stacked::part(detail-icon) {
+	margin-top: auto;
+}
+ion-item.item-label-stacked.item-textarea > ion-icon[slot="start"],
+ion-item.item-label-stacked.item-textarea > ion-icon[slot="end"],
+ion-item.item-label-floating.item-textarea > ion-icon[slot="start"],
+ion-item.item-label-floating.item-textarea > ion-icon[slot="end"] {
+	margin-top: 10px;
+}
+ion-item.item-label-floating::part(detail-icon),
+ion-item.item-label-stacked::part(detail-icon) {
+	margin-bottom: 10px;
+}
+.item-input:not(.item-textarea) > .label-stacked.sc-ion-label-md-h, .item-input:not(.item-textarea) > .label-floating.sc-ion-label-md-h,
+.item-select > .label-stacked.sc-ion-label-md-h, .item-select > .label-floating.sc-ion-label-md-h {
+	margin-bottom: 4px;
+}
+/* Fix Ionic 5 issues */
+ion-item ion-reorder:not([slot]) {
+	z-index: 100;
+}
+/** ngx-datatable fix pagination **/
+@media only screen and (max-width: 500px) {
+	.ngx-datatable.material .datatable-footer {
+		.page-count {
+			white-space: nowrap;
+		}
+		.pager {
+			white-space: nowrap;
+		}
+
+	}
+
+}
+/*
+* Appery.io component.
+*/
+.img-responsive {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+.img-circle {
+	border-radius: 50%;
+}
+.img-rounded {
+	border-radius: 6px;
+}
+ion-img::part(image) {
+	box-sizing: border-box;
+}
+ion-toolbar {
+	width: auto;
+}
+ion-toolbar.ios ion-title.title-large {
+	text-align: center;
+}
+ion-input .native-wrapper input {
+	min-height: 37px;
+}
+/* [ETST-42825 Ionic Input Margin Bug] Temporary fix for ion-input width */
+:not(ion-item) > ion-input.sc-ion-input-ios-h,
+:not(ion-item) > ion-input.sc-ion-input-md-h {
+	width: auto;
+}
+ion-checkbox ion-label,
+ion-toggle ion-label,
+ion-input ion-label,
+ion-textarea ion-label,
+ion-select ion-label,
+ion-item:has(ion-select) > ion-label {
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+}
+ion-input[aioFixedLabel] ion-label,
+ion-textarea[aioFixedLabel] ion-label,
+ion-select[aioFixedLabel] ion-label {
+	flex: 0 0 100px;
+	width: 100px;
+	min-width: 100px;
+	max-width: 200px;
+}
+ion-item:has(ion-select) > ion-label:not(.label-stacked) {
+	min-width: 100px;
+	max-width: 200px;
+}
+ion-item ion-label[slot=end] {
+	text-align: right;
+}
+ion-item.item-textarea {
+	align-items: baseline;
+}
+ion-item.item-textarea ion-icon:not([slot]) {
+	top: 7px;
+	position: relative;
+}
+ion-textarea .native-wrapper textarea {
+	min-height: 37px;
+}
+/*
+ETST-42375 bugfix for ion-textarea bug(https://github.com/ionic-team/ionic-framework/issues/21242)
+*/
+ion-textarea textarea {
+	min-height: 58px;
+}
+/* [ETST-42825 Bug] Temporary fix for ion-textarea width */
+:not(ion-item) > ion-textarea.sc-ion-textarea-md-h,
+:not(ion-item) > ion-textarea.sc-ion-textarea-ios-h {
+	width: auto;
+}
+/* [ETST-42825 Ionic Search Margin Bug] Temporary fix for ion-search width */
+ion-searchbar.sc-ion-searchbar-ios-h,
+ion-searchbar.sc-ion-searchbar-md-h {
+	width: auto;
+}
+:root {
+	&.md ngx-datatable {
+		--aio-toolbar-min-height: 56px;
+	}
+	&.ios ngx-datatable {
+		--aio-toolbar-min-height: 44px;
+	}
+	ngx-datatable {
+		&.aio-datatable-height-25 {
+			height: 25vh;
+		}
+		&.aio-datatable-height-33 {
+			height: 33vh;
+		}
+		&.aio-datatable-height-50 {
+			height: 50vh;
+		}
+		&.aio-datatable-height-66 {
+			height: 66vh;
+		}
+		&.aio-datatable-height-75 {
+			height: 75vh;
+		}
+		&.aio-datatable-height-100 {
+			height: 100vh;
+		}
+		&.height-100-header {
+			height: calc(100vh - var(--aio-toolbar-min-height));
+		}
+		&.height-100-header-footer {
+			height: calc(100vh - 2 * var(--aio-toolbar-min-height));
+		}
+
+	}
+	.datatable-icon-next {
+		font-size: 20px;
+		line-height: 20px;
+		padding: 0 3px;
+		&:before {
+			content: '\71';
+		}
+
+	}
+
+}
+aio-datetime {
+	display: flex;
+	position: static;
+}
+aio-datetime.no-item {
+	position: relative;
+}
+.aio-datetime-modal ion-datetime {
+	width: 100%;
+	height: 100%;
+	min-width: var(--width);
+}
+.action-sheet-group.sc-ion-action-sheet-ios {
+	overflow: auto;
+}
+.action-sheet-wrapper.sc-ion-action-sheet-ios {
+	top: 0;
+	height: auto;
+}
+ion-item.item-multiple-inputs ion-select, ion-select.select-label-placement-stacked.aio-no-wrapper {
+	min-height: 44px;
+}
+ion-select.select-label-placement-floating::part(label),
+ion-select.select-label-placement-stacked::part(label) {
+	line-height: 19px;
+}
+ion-item[appfloatinglabelhandler]:not(.item-has-value) ion-select {
+	visibility: hidden;
+}
+.aio-select-label-default:not(.item-label-stacked):not(.item-label-floating) ion-select:first-of-type {
+	flex-grow: 0;
+	margin-left: auto;
+}
+.aio-select-label-default-end:not(.item-label-stacked):not(.item-label-floating) ion-select:last-of-type {
+	flex-grow: 0;
+	margin-right: auto;
+}
+.item-multiple-inputs ion-select, .aio-select-label-default-fixed ion-select {
+	flex-grow: 0;
+}
+ion-label.label-stacked.sc-ion-label-md-h,
+.item-multiple-inputs .label-floating.sc-ion-label-md-h,
+.item-has-value .label-floating.sc-ion-label-md-h {
+	margin-bottom: 4px;
+}
+.item-multiple-inputs:not(.item-label-stacked) ion-select::part(container) {
+	padding-inline-start: 8px;
+}
+.item-multiple-inputs:not(.item-label-stacked) ion-select::part(icon) {
+	padding-inline-end: 3px;
+}
+ion-popover.select-popover::part(content) {
+	min-width: 170px;
+}
+[ng-reflect-router-link] {
+	cursor: pointer;
+}
+ion-menu::part(container) {
+	box-sizing: border-box;
+}
+ion-input ion-icon,
+ion-textarea ion-icon {
+	color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.54);
+	font-size: 24px;
+}
+.aio-component-divider {
+	width: 100%;
+}
+.aio-component-divider::before {
+	display: block;
+	content: '';
+}
+@media (min-width: 768px) {
+	ion-modal {
+		--border-radius: 8px;
+
+	}
+
+}
+/** PWA install modal **/
+.aio-modal-install-pwa {
+	--border-radius: 8px;
+	--max-width: 90%;
+	--max-height: 80%;
+	--ion-backdrop-color: var(--ion-color-medium);
+}
+.aio-modal-install-pwa.ios {
+	--height: var(--aio-pwa-modal-height-ios, 305px);
+}
+.aio-modal-install-pwa.android {
+	--height: var(--aio-pwa-modal-height-android, 210px);
+}
+@media (max-width: 767.98px) {
+	.aio-modal-install-pwa {
+		--width: var(--aio-pwa-modal-width-sm, 300px);
+
+	}
+
+}
+@media (min-width: 768px) {
+	.aio-modal-install-pwa {
+		--width: var(--aio-pwa-modal-width-md, 400px);
+
+	}
+
+}
+/** Custom Loading **/
+.aio-custom-loader-overlay .loading-wrapper {
+	--background: transparent;
+	border: 0;
+	box-shadow: none;
+}
+/* Tabs */
+ion-tab-bar ion-tab-button.tab-selected ion-icon {
+	color: var(--aio-selected-tab-icon-color, --ion-color-contrast);
+}
+/* Animated Tabs */
+ion-tab-bar[aioanimatedtabs] {
+	--aioTabsBgColor: var(--ion-color-base, var(--ion-color-light));
+	--aioDuration: .7s;
+	--aioItemDefaultBgColor: var(--ion-color-warning);
+	--aioTabsHeight: 45px;
+	border: 0;
+}
+ion-tab-bar[aioanimatedtabs]:has(ion-label) {
+	--aioTabsHeight: 60px;
+}
+ion-tab-bar[aioanimatedtabs] {
+	contain: unset;
+	background: var(--aioTabsBgColor);
+	padding: 0px 30px var(--ion-safe-area-bottom, 0) 30px;
+	height: var(--aioTabsHeight);
+}
+ion-tab-bar[aioanimatedtabs] ion-label {
+	margin-bottom: 0;
+}
+ion-tab-bar[aioanimatedtabs] ion-tab-button {
+	flex-grow: 1;
+	display: flex;
+	max-width: 110px;
+	cursor: pointer;
+	will-change: transform;
+	padding: 0;
+	--ripple-color: transparent;
+	background: var(--aioTabsBgColor);
+}
+ion-tab-bar[aioanimatedtabs] ion-tab-button ion-icon {
+	width: 30px;
+	height: 30px;
+	margin: 0;
+	transform: translate3d(0, 0px, 0);
+	transition: transform var(--aioDuration);
+}
+ion-tab-bar[aioanimatedtabs] ion-tab-button.tab-selected ion-icon {
+	transform: translate3d(0, -20px, 0);
+	transition: transform var(--aioDuration) .1s;
+}
+ion-tab-bar[aioanimatedtabs]:has(ion-label) ion-tab-button.tab-selected ion-icon {
+	transform: translate3d(0, -18px, 0);
+}
+ion-tab-bar[aioanimatedtabs]:has(ion-label) ion-tab-button:not(:has(ion-label)).tab-selected ion-icon {
+	transform: translate3d(0, -27px, 0);
+}
+ion-tab-bar[aioanimatedtabs] ion-tab-button::before {
+	content: "";
+	z-index: -1;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	position: absolute;
+	box-sizing: inherit;
+	transform: translate3d(0, 0px, 0);
+	opacity: 0;
+	transition: all calc(var(--aioDuration) * .7);
+}
+ion-tab-bar[aioanimatedtabs] ion-tab-button.tab-selected::before {
+	background-color: var(--aioItemBgColor, var(--aioItemDefaultBgColor));
+	transform: translate3d(0, -20px, 0);
+	opacity: 1;
+	transition: transform calc(var(--aioDuration) * .7) calc(var(--aioDuration) * .3), opacity calc(var(--aioDuration) * .9) calc(var(--aioDuration) * .1), background-color calc(var(--aioDuration) * .5) calc(var(--aioDuration) * .5);
+}
+ion-tab-bar[aioanimatedtabs]:has(ion-label) ion-tab-button.tab-selected::before {
+	transform: translate3d(0, -27px, 0);
+}
+ion-tab-bar[aioanimatedtabs] .button_top_border {
+	left: 0;
+	bottom: calc(var(--aioTabsHeight) + var(--ion-safe-area-bottom, 0));
+	position: absolute;
+	will-change: transform;
+	background-color: var(--aioTabsBgColor);
+	transition: transform var(--timeOut , var(--aioDuration));
+	clip-path: path("M4.622967,31.4c3.932972,0.069011,9.728931,-0.276044,16.076885,-2.76044c3.932972,-1.587253,6.830951,-3.450549,12.488911,-7.246154c7.382947,-4.89978,8.141942,-6.349011,14.213898,-9.868571c3.449975,-2.001319,6.347955,-3.588571,10.487925,-4.830769c4.898965,-1.449231,9.176934,-1.587253,12.143913,-1.449231c2.897979,-0.138022,7.244948,0.069011,12.143913,1.449231c4.20897,1.242198,7.03795,2.829451,10.487925,4.830769c6.071957,3.450549,6.830951,4.89978,14.213898,9.868571c5.726959,3.795604,8.555939,5.658901,12.488911,7.246154c6.347955,2.484396,12.143913,2.898462,16.076885,2.76044H4.622967z");
+	width: 140px;
+	height: 31.4px;
+}
+ion-tab-bar[aioanimatedtabs] ion-tab-button::part(native) {
+	overflow: visible;
+}
+@media (min-width: 768px) {
+	.aio_modal_entry {
+		--width: 100%;
+		--max-width: 600px;
+		--height: 100%;
+		--max-height: 1100px;
+
+	}
+
+}
+@media (max-width: 767.98px) {
+	.aio_modal_cropimage {
+		--border-radius: 8px;
+		--width: 100%;
+		--height: 100%;
+
+	}
+
+}
+@media (min-width: 768px) {
+	.aio_modal_cropimage {
+		--width: 100%;
+		--height: 100%;
+
+	}
+
+}

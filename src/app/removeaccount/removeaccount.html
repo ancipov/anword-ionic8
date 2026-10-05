@@ -1,0 +1,56 @@
+<ion-header _aio-8855E963>
+    <ion-toolbar _aio-A62CBC83 #j_112>
+        <ion-title _aio-417E29FF #j_114>
+            {{ 'Remove Account' | translate }}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content _aio-FC575B45 class="aio-vertical-align-center ion-padding" #_aio_content>
+    <div class="aio-vertical-align-wrapper">
+        <form _aio-F227F6E5 #form="ngForm" viewchild_name='form' #form_el [aioFormChange]="form">
+            <h3 _aio-BB960A75 #j_101>
+                {{ 'In order to remove account could you provide the following information' | translate
+                }}
+            </h3>
+            <ion-item #j_102 _aio-D0CCF871>
+                <ion-textarea labelPlacement="stacked" _aio-F3EDB505 #j_104="ngModel" #j_104_el
+                placeholder="{{ 'Could you please provide any information (username, email, phone number and etc) which can help us to identify you' | translate }}"
+                rows="4" name="Textarea1" required="true" aioControlValidation="maxLength:2000" aioValidationShowMessage="true"
+                [(ngModel)]="info">
+                    <ion-label _aio-9CDCCA3D #j_103 slot="label" color="primary">
+                        {{ 'User identification information' | translate }}
+                    </ion-label>
+                </ion-textarea>
+            </ion-item>
+            <ion-item #j_105 _aio-BB32CC7A>
+                <ion-input labelPlacement="stacked" _aio-743C2409 #j_107="ngModel" #j_107_el name="Input1"
+                placeholder="{{ 'Enter Email' | translate }}" required="true" aioControlValidation="email"
+                aioValidationShowMessage="true" [(ngModel)]="email">
+                    <ion-label _aio-6B6A1E9B #j_106 slot="label" color="primary">
+                        {{ 'Email for communication' | translate }}
+                    </ion-label>
+                </ion-input>
+            </ion-item>
+            <re-captcha _aio-817D4748 #j_108 siteKey="6LfLxD8pAAAAAGrHh8HHZRWMyApLknbOXXzTTbGz"
+            (resolved)="this.captcha = $event">
+            </re-captcha>
+            <ion-input style="display:none!important;" _aio-E3A0F3B0 name="Validation1" required="true"
+            [ngModel]="captcha" aioControlValidation [aioValidationMessages]='{required: "Please confirm that you are not a robot"}'
+            aioValidationShowMessage="true">
+            </ion-input>
+            <ion-button _aio-6388E8B1 #j_110 expand="block" (click)="remove()">
+                {{ 'Submit' | translate }}
+            </ion-button>
+        </form>
+    </div>
+    <aio-tester-buttons slot="fixed">
+    </aio-tester-buttons>
+</ion-content>
+<ion-footer _aio-6542852D>
+    <ion-toolbar _aio-51F71707 #j_116>
+        <div _aio-7C3B65EF #j_117>
+            {{'©' | translate }} {{$a.moment().year()}} {{'COMPANY_NAME' | translate}} {{'All
+            rights reserved.' | translate}}
+        </div>
+    </ion-toolbar>
+</ion-footer>

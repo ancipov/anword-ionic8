@@ -1,0 +1,54 @@
+
+/* Styles properties */
+ion-content[_aio-6F6588DA] {
+	text-align: center;
+}
+image-cropper[_aio-860BE308] {
+	display: inline-block;
+	position: relative;
+}
+ion-icon[_aio-8930F647] {
+	border-style: solid;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	position: absolute;
+	top: 10px;
+	right: 60px;
+}
+ion-icon[_aio-8930F647] {
+	z-index:999;
+}
+ion-icon[_aio-66C759DA] {
+	border-style: solid;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	position: absolute;
+	top: 10px;
+	right: 20px;
+}
+ion-footer[_aio-EBD809C1] {
+	text-align:center;
+}
+ion-button[_aio-53EFB92D] {
+	margin-top: 16px;
+	margin-right: 16px;
+	margin-bottom: 16px;
+	margin-left: 16px;
+	width: 100%;
+	max-width: 400px;
+}
+ion-button[_aio-53EFB92D] {
+	display:inline-block;
+}

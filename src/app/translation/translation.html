@@ -1,0 +1,37 @@
+<ion-header _aio-9CC5B885>
+    <ion-toolbar _aio-1A3BD90D #j_40>
+        <ion-title _aio-BEA93C46 #j_42>
+            Translation
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content _aio-61524458 class="ion-padding" #_aio_content>
+    <form _aio-AA12AB83 #form="ngForm" viewchild_name='form' #form_el [aioFormChange]="form">
+        <ion-item #j_31 _aio-4C1CBCF2>
+            <ion-input labelPlacement="stacked" _aio-5C5DE5AB #j_33="ngModel" #j_33_el name="Input1"
+            placeholder="Enter text" required="true" aioControlValidation aioValidationShowMessage="true"
+            [(ngModel)]="text" (keyup.enter)="translate()" (ionChange)="result = ''">
+                <ion-label _aio-C180B9D4 #j_32 slot="label">
+                    Text
+                </ion-label>
+            </ion-input>
+        </ion-item>
+    </form>
+    <ion-button _aio-14289EC5 #j_34 expand="block" (click)="translate()">
+        Translate
+    </ion-button>
+    <span _aio-72727779 #j_35 *ngIf="result">
+        Deep Seek translated text
+    </span>
+    <span _aio-9FFA8098 #j_36 *ngIf="result">
+        {{text}}
+    </span>
+    <span _aio-B21456B6 #j_37 *ngIf="result">
+        from English to Spanish as
+    </span>
+    <span _aio-2344A7B8 #j_38 *ngIf="result">
+        {{result}}
+    </span>
+    <aio-tester-buttons slot="fixed">
+    </aio-tester-buttons>
+</ion-content>

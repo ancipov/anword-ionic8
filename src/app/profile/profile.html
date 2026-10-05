@@ -1,0 +1,156 @@
+<ion-header _aio-33EEAD49>
+    <ion-toolbar _aio-4EB9A145 #j_297>
+        <ion-title _aio-42A4E05C #j_298>
+            {{ 'Profile' | translate }}
+        </ion-title>
+        <ion-buttons #j_299 _aio-1A7DA271 slot="end" collapse="true">
+            <ion-menu-button _aio-8E44122B #j_300 color="dark" [class.aioHidden]="!__getMapping(currentItem, 'j_300__visible', true)"
+            *ngIf="viewMode">
+            </ion-menu-button>
+            <ion-button _aio-6EC3D9E2 #j_301 fill="outline" shape="round" color="primary" [disabled]="__getMapping(currentItem, 'j_301__disabled', $a.offline, undefined, true)"
+            *ngIf="viewMode" (click)="edit()">
+                <ion-icon _aio-6EC3D9E2 #j_301__icon name="pencil-sharp" slot="start">
+                </ion-icon>
+                {{ 'Edit' | translate }}
+            </ion-button>
+            <ion-button _aio-93CE35F2 #j_302 expand="block" fill="outline" shape="round" color="primary"
+            *ngIf="!viewMode" (click)="cancel()">
+                <ion-icon _aio-93CE35F2 #j_302__icon name="close-sharp" slot="start">
+                </ion-icon>
+                {{ 'Cancel' | translate }}
+            </ion-button>
+        </ion-buttons>
+        <ion-buttons #j_303 _aio-56B27173 slot="start" collapse="true">
+            <ion-back-button _aio-346E247C #j_304 color="primary" [disabled]="__getMapping(currentItem, 'j_304__disabled', $a.offline, undefined, true)"
+            *ngIf="viewMode" (click)="edit()">
+            </ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content _aio-8E6B3FB4 class="ion-padding" #_aio_content>
+    <div _aio-A5AD660C #j_258>
+        <ion-avatar _aio-95404468 class="img">
+            <img #j_259 [src]="photoSrc" alt="{{ 'Image error' | translate }}">
+        </ion-avatar>
+        <div _aio-7F67A85E #j_260 [class.aioHidden]="viewMode">
+            <ion-button _aio-4745F910 #j_261 fill="outline" shape="round" *ngIf="this.$a.isMobile() && this.$a.isAndroid()"
+            (click)="changePhoto()">
+                <ion-icon _aio-4745F910 #j_261__icon name="camera-outline" slot="start">
+                </ion-icon>
+                {{ 'Upload Photo' | translate }}
+            </ion-button>
+            <aio-file-picker _aio-FB146E26 #j_262 class="clickable-image" type="image" showCount="false"
+            showFiles="false" showRemoveIcon="true" name="FilePicker" accept="image/*" imageSrc="assets/images/uploadphoto.png"
+            *ngIf="!(this.$a.isMobile() && this.$a.isAndroid())" [(ngModel)]="photoFile" (ionChange)="changePhoto()">
+            </aio-file-picker>
+        </div>
+        <form _aio-6959DFC1 #form="ngForm" viewchild_name='form' #form_el [aioFormChange]="form"
+        style="{{viewMode ? 'cursor: not-allowed; pointer-events: none;' : ''}}">
+            <ion-item #j_265 _aio-1C48D730>
+                <ion-input labelPlacement="stacked" _aio-6503A88C #j_267="ngModel" #j_267_el name="EmailInput"
+                placeholder="{{ 'Enter username' | translate }}" readonly="false" type="email" required="true"
+                aioControlValidation="email" aioValidationShowMessage="true" [(ngModel)]="username">
+                    <ion-label _aio-414DC49F #j_266 slot="label">
+                        {{ 'Username (email) *' | translate }}
+                    </ion-label>
+                </ion-input>
+            </ion-item>
+            <ion-item #j_268 _aio-FA9E6255 *ngIf="$v.user?.status == &quot;anonymous&quot;">
+                <ion-input labelPlacement="stacked" _aio-6CA1095D #j_270="ngModel" #j_270_el clearOnEdit="false"
+                name="EmailInput_copy" placeholder="{{ 'Enter password' | translate }}" readonly="false"
+                type="password" required="true" aioControlValidation="strongPassword" aioValidationShowMessage="true"
+                [(ngModel)]="password">
+                    <ion-label _aio-3A38EC23 #j_269 slot="label">
+                        {{ 'Password *' | translate }}
+                    </ion-label>
+                </ion-input>
+            </ion-item>
+            <ion-item #j_271 _aio-4773D571>
+                <ion-input labelPlacement="stacked" _aio-6A8A18FC #j_273="ngModel" #j_273_el name="FirstNameInput"
+                placeholder="{{ 'Enter first name' | translate }}" required="true" aioControlValidation
+                aioValidationShowMessage="true" [(ngModel)]="profile.firstName">
+                    <ion-label _aio-DAD86D74 #j_272 slot="label">
+                        {{ 'First Name *' | translate }}
+                    </ion-label>
+                </ion-input>
+            </ion-item>
+            <ion-item #j_274 _aio-85D2E91B>
+                <ion-input labelPlacement="stacked" _aio-5EEDEA62 #j_276="ngModel" #j_276_el name="LastNameInput"
+                placeholder="{{ 'Enter last name' | translate }}" readonly="false" required="true"
+                aioControlValidation aioValidationShowMessage="true" [(ngModel)]="profile.lastName">
+                    <ion-label _aio-1F7B36E8 #j_275 slot="label">
+                        {{ 'Last Name *' | translate }}
+                    </ion-label>
+                </ion-input>
+            </ion-item>
+            <ion-item #j_277 _aio-C20E4A1B>
+                <ion-select _aio-79E6AEA8 #j_279="ngModel" #j_279_el cancelText="{{ 'CANCEL' | translate }}"
+                interface="popover" [compareWith]="$a.utils.selectCustomComparator" name="JobSelect"
+                okText="{{ 'OK' | translate }}" placeholder="{{ 'Select job' | translate }}" required="false"
+                [(ngModel)]="profile.job" label-placement="stacked" [class.select-label-placement-stacked]="true"
+                [interfaceOptions]="{size: 'cover'}">
+                    <ion-label _aio-A3A7F5B5 #j_278 slot="label">
+                        {{ 'Job' | translate }}
+                    </ion-label>
+                    <ion-select-option #j_280 value="Product Designer">
+                        {{ 'Product Designer' | translate }}
+                    </ion-select-option>
+                    <ion-select-option #j_281 value="Manager">
+                        {{ 'Manager' | translate }}
+                    </ion-select-option>
+                </ion-select>
+            </ion-item>
+            <ion-item #j_282 _aio-D1BE4C64>
+                <ion-input labelPlacement="stacked" _aio-0F9C26B5 #j_284="ngModel" #j_284_el name="PhoneInput"
+                placeholder="{{ '+1 (000) 000-0000' | translate }}" readonly="false" type="tel" required="false"
+                simpleMask="+9 (999) 999-99999" [(ngModel)]="profile.phone">
+                    <ion-label _aio-1BEAAEF3 #j_283 slot="label">
+                        {{ 'Phone' | translate }}
+                    </ion-label>
+                </ion-input>
+            </ion-item>
+            <ion-item #j_285 _aio-D693939E>
+                <ion-select _aio-53858111 #j_287="ngModel" #j_287_el cancelText="{{ 'CANCEL' | translate }}"
+                interface="popover" [compareWith]="$a.utils.selectCustomComparator" name="GenderSelect"
+                okText="{{ 'OK' | translate }}" placeholder="{{ 'Select gender' | translate }}" required="false"
+                simpleMask="" [(ngModel)]="profile.gender" label-placement="stacked" [class.select-label-placement-stacked]="true"
+                [interfaceOptions]="{size: 'cover'}">
+                    <ion-label _aio-47886DFC #j_286 slot="label">
+                        {{ 'Gender' | translate }}
+                    </ion-label>
+                    <ion-select-option #j_288 value="Male">
+                        {{ 'Male' | translate }}
+                    </ion-select-option>
+                    <ion-select-option #j_289 value="Female">
+                        {{ 'Female' | translate }}
+                    </ion-select-option>
+                </ion-select>
+            </ion-item>
+            <ion-item #j_290 _aio-546CD866>
+                <ion-input labelPlacement="stacked" _aio-CFD4A704 #j_292="ngModel" #j_292_el name="AddressInput"
+                placeholder="{{ 'Enter address' | translate }}" readonly="false" required="false"
+                [(ngModel)]="profile.address">
+                    <ion-label _aio-2BF2B06B #j_291 slot="label">
+                        {{ 'Address' | translate }}
+                    </ion-label>
+                </ion-input>
+            </ion-item>
+            <ion-button _aio-9216616E #j_293 expand="block" [disabled]="__getMapping(currentItem, 'j_293__disabled', $a.offline, undefined, true)"
+            *ngIf="!viewMode" (click)="save()">
+                <ion-icon _aio-9216616E #j_293__icon name="save-outline" slot="start">
+                </ion-icon>
+                {{ 'Save' | translate }}
+            </ion-button>
+            <div _aio-1605B6B7 #j_294 *ngIf="!viewMode">
+                {{ 'All fields marked with star (*) are required' | translate }}
+            </div>
+        </form>
+        <ion-button _aio-9EE98932 #j_295 expand="block" [disabled]="__getMapping(currentItem, 'j_295__disabled', $a.offline, undefined, true)"
+        *ngIf="viewMode && !profile.provider && $v.user?.status != &quot;anonymous&quot;"
+        (click)="$a.modal(&quot;changepassword&quot;)">
+            {{ 'Change Password' | translate }}
+        </ion-button>
+    </div>
+    <aio-tester-buttons slot="fixed">
+    </aio-tester-buttons>
+</ion-content>

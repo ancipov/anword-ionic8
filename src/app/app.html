@@ -1,0 +1,120 @@
+<ion-app class="{{deviceType}}">
+    <ion-split-pane _aio-2FD0D9B5 contentId="main-content" disabled="{{hideMenu}}" when="lg">
+        <ion-menu contentId="main-content" disabled="{{hideMenuPages.includes($a.path)}}"
+        side="start" swipeGesture="false" [class.minimized]="!menuExpand" _aio-A19D13F4>
+            <ion-header _aio-A56247EF class="menuheader">
+                <ion-toolbar _aio-519604DD #j_347 class="ion-no-padding" style="display: flex; align-items: center;height: 100%;">
+                    <ion-buttons #j_348 _aio-B19441CE slot="end" collapse="true" class="ion-hide-lg-down">
+                        <ion-button _aio-A5114793 #j_349 expand="block" size="large" class="button-min"
+                        color="primary" (click)="toggleMenu()">
+                            <ion-icon _aio-A5114793 #j_349__icon name="chevron-back" slot="icon-only">
+                            </ion-icon>
+                        </ion-button>
+                        <ion-button _aio-B667C2E6 #j_350 expand="block" size="large" class="button-max"
+                        color="primary" (click)="toggleMenu()">
+                            <ion-icon _aio-B667C2E6 #j_350__icon name="chevron-forward" slot="icon-only">
+                            </ion-icon>
+                        </ion-button>
+                    </ion-buttons>
+                    <ion-item _aio-18E503C1 #j_351 class="ion-no-padding headeritem" lines="none">
+                        <ion-avatar _aio-725EFE9F>
+                            <img #j_352 src="assets/images/note.png" alt="{{ 'Image error' | translate }}">
+                        </ion-avatar>
+                        <div _aio-4EE354B1 #j_353>
+                            {{ 'Anwords' | translate }}
+                        </div>
+                    </ion-item>
+                </ion-toolbar>
+            </ion-header>
+            <ion-content _aio-94D9A645>
+                <ion-list _aio-DEBF7392 #j_333 (click)="menuCtrl.close()">
+                    <ion-item _aio-C16CA61D #j_334 button="true" detailIcon="none" detailIcon="none"
+                    [routerLink]="['/pages/dictionaries']" routerLinkActive="selected">
+                        <ion-icon _aio-498A9797 #j_335 name="list-sharp" size="large" slot="start">
+                        </ion-icon>
+                        <ion-label _aio-2F4BFCF0 #j_336>
+                            {{ 'Dictionaries' | translate }}
+                        </ion-label>
+                    </ion-item>
+                    <ion-item _aio-03682C3C #j_337 button="true" detailIcon="none" detailIcon="none"
+                    [routerLink]="['/pages/mydictionary']" routerLinkActive="selected">
+                        <ion-icon _aio-9F0ABBC5 #j_338 name="albums-outline" size="large" slot="start">
+                        </ion-icon>
+                        <ion-label _aio-F4013AA1 #j_339>
+                            {{ 'My Dictionary' | translate }}
+                        </ion-label>
+                    </ion-item>
+                    <ion-item _aio-8C97F3E7 #j_340 button="true" detailIcon="none" detailIcon="none"
+                    [routerLink]="['/pages/settings']" routerLinkActive="selected">
+                        <ion-icon _aio-E7E09254 #j_341 name="settings-outline" size="large" slot="start">
+                        </ion-icon>
+                        <ion-label _aio-F00A08A2 #j_342>
+                            {{ 'Settings' | translate }}
+                        </ion-label>
+                    </ion-item>
+                    <ion-item _aio-261BB546 #j_343 button="true" detailIcon="none" detailIcon="none"
+                    [routerLink]="['/pages/profile']" routerLinkActive="selected">
+                        <ion-icon _aio-053BD0AB #j_344 name="person-outline" size="large" slot="start">
+                        </ion-icon>
+                        <ion-label _aio-73080692 #j_345>
+                            {{ 'Profile' | translate }}
+                        </ion-label>
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+            <ion-footer _aio-6BAABC17 class="ion-padding ion-no-border">
+                <ion-button _aio-D2FC7C2A #j_355 expand="block" fill="outline" shape="round" (click)="switchUser()">
+                    <ion-icon _aio-D2FC7C2A #j_355__icon name="swap-horizontal-sharp" slot="start">
+                    </ion-icon>
+                    Switch User
+                </ion-button>
+                <ion-toolbar _aio-A1420AD6 #j_356 [class.aioHidden]="!__getMapping(currentItem, 'j_356__visible', true)"
+                style="display: flex; align-items: center;height: 100%;">
+                    <ion-grid _aio-60834500 #j_357>
+                        <ion-row _aio-40E788E1 #j_358 class="ion-nowrap" (click)="switchUser()">
+                            <ion-col _aio-1F383B47 #j_359 size="auto">
+                                <ion-icon _aio-2783FC2E #j_360 name="swap-horizontal-sharp" size="large">
+                                </ion-icon>
+                            </ion-col>
+                            <ion-col _aio-632BC871 #j_361 class="removeminimazed ion-align-self-center">
+                                <div _aio-CC725719 #j_362>
+                                    {{ 'Switch User' | translate }}
+                                </div>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row _aio-144EFA97 #j_363 class="ion-nowrap" [class.aioHidden]="!__getMapping(currentItem, 'j_363__visible', true)"
+                        (click)="logout()" *ngIf="$v.user?.status != &quot;anonymous&quot;">
+                            <ion-col _aio-ECE67857 #j_364 size="auto">
+                                <ion-icon _aio-1F2DCE38 #j_365 name="exit-outline" size="large">
+                                </ion-icon>
+                            </ion-col>
+                            <ion-col _aio-34BF6176 #j_366 class="removeminimazed ion-align-self-center">
+                                <div _aio-858C1790 #j_367>
+                                    {{ 'Logout' | translate }}
+                                </div>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row _aio-01C4BD66 #j_368 [class.aioHidden]="!__getMapping(currentItem, 'j_368__visible', true)"
+                        (click)="$a.navigation.root('login')" *ngIf="$v.user?.status == &quot;anonymous&quot;">
+                            <ion-col _aio-CD28E327 #j_369 size="auto">
+                                <ion-icon _aio-C869DB7B #j_370 name="exit-outline" size="large">
+                                </ion-icon>
+                            </ion-col>
+                            <ion-col _aio-CDDA9E1D #j_371 class="ion-align-self-center">
+                                <div _aio-EF96DB60 #j_372>
+                                    {{ 'Login' | translate }}
+                                </div>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-toolbar>
+                <div _aio-7BEEF5D0 #j_373 class="removeminimazed" *ngIf="false">
+                    {{'©' | translate }} {{$a.moment().year()}} {{'COMPANY_NAME' | translate}} {{'All
+                    rights reserved.' | translate}}
+                </div>
+            </ion-footer>
+        </ion-menu>
+        <ion-router-outlet id="main-content">
+        </ion-router-outlet>
+    </ion-split-pane>
+</ion-app>

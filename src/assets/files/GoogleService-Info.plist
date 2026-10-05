@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>273052470896-1dm4klpb635m9k87d3dp938isoh0fasm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.273052470896-1dm4klpb635m9k87d3dp938isoh0fasm</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB474twbPH9axgdgniLpDeMyKmLWAx-4rY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>273052470896</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.exadel.ApperyTester</string>
+	<key>PROJECT_ID</key>
+	<string>apperyiopush-c78aa</string>
+	<key>STORAGE_BUCKET</key>
+	<string>apperyiopush-c78aa.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:273052470896:ios:0a3e78182ff2caea95eeb5</string>
+	<key>DATABASE_URL</key>
+	<string>https://apperyiopush-c78aa.firebaseio.com</string>
+</dict>
+</plist>

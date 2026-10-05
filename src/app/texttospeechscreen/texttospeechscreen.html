@@ -1,0 +1,60 @@
+<ion-header _aio-C5A442C9>
+    <ion-toolbar _aio-3136E56F #j_669>
+        <ion-title _aio-53A5E9E3 #j_671>
+            Text To Speech
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content _aio-DC67B6A4 class="ion-padding" #_aio_content>
+    <ion-item #j_651 _aio-9A346D87>
+        <ion-select _aio-82989500 #j_653 cancelText="CANCEL" [compareWith]="$a.utils.selectCustomComparator"
+        name="Select1" okText="OK" placeholder="Select" [(ngModel)]="selectedLanguage" (ionChange)="onLanguageChange()"
+        label-placement="stacked" [class.select-label-placement-stacked]="true">
+            <ion-label _aio-231B80FA #j_652 slot="label">
+                Language
+            </ion-label>
+            <ion-select-option #j_654 value="{{language}}" *ngFor="let language of languages">
+                {{language}}
+            </ion-select-option>
+        </ion-select>
+    </ion-item>
+    <ion-item #j_655 _aio-FFEBFBEF>
+        <ion-select _aio-8EF756C4 #j_657 cancelText="CANCEL" [compareWith]="$a.utils.selectCustomComparator"
+        name="Select2" okText="OK" placeholder="Select" [(ngModel)]="selectedVoice" label-placement="stacked"
+        [class.select-label-placement-stacked]="true">
+            <ion-label _aio-C90312BF #j_656 slot="label">
+                Voice
+            </ion-label>
+            <ion-select-option #j_658 value="{{ voice.identifier }}" *ngFor="let voice of filteredVoices">
+                {{ voice.name }} ({{ voice.language }})
+            </ion-select-option>
+        </ion-select>
+    </ion-item>
+    <ion-item #j_659 _aio-AF9C573A>
+        <ion-input labelPlacement="stacked" _aio-B5647879 #j_661 name="Input2" placeholder="Enter rate"
+        type="number" [(ngModel)]="rate" labelPlacement="stacked">
+            <ion-label _aio-AB32C971 #j_660 slot="label">
+                Rate
+            </ion-label>
+        </ion-input>
+    </ion-item>
+    <ion-item #j_662 _aio-BA892BFE>
+        <ion-input labelPlacement="stacked" _aio-971892A4 #j_664 name="Input1" placeholder="Enter any text"
+        [(ngModel)]="text" labelPlacement="stacked">
+            <ion-label _aio-D7558214 #j_663 slot="label">
+                Text
+            </ion-label>
+        </ion-input>
+    </ion-item>
+    <ion-button _aio-880AE49A #j_665 expand="full" (click)="speak()">
+        Speak
+    </ion-button>
+    <ion-button _aio-17429947 #j_666 expand="full" fill="outline" (click)="stop()">
+        Stop
+    </ion-button>
+    <p _aio-90D1AB7E #j_667 *ngIf="status">
+        {{ status }}
+    </p>
+    <aio-tester-buttons slot="fixed">
+    </aio-tester-buttons>
+</ion-content>

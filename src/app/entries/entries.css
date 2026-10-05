@@ -1,0 +1,37 @@
+
+/* Styles properties */
+div[_aio-C44B6256] {
+	font-weight: 600;
+	color: var(--ion-color-dark);
+}
+ion-skeleton-text[_aio-427DCC24] {
+	width: 50%;
+}
+ion-skeleton-text[_aio-920857BD] {
+	width: 80%;
+}
+h5[_aio-8BBA80AF] {
+	text-align: center;
+	color: var(--ion-color-medium);
+}
+ion-button[_aio-25BF0EE2] {
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+ion-button[_aio-9D5F939C] {
+	margin-bottom: 10px;
+}
+ion-searchbar[_aio-8A96E670] {
+	padding-right: 0px;
+	position: relative;
+	right: 0px;
+}
+ion-searchbar[_aio-8A96E670] {
+	position:absolute;
+	display:inline-block;
+	right:30px;
+	max-width:300px;
+}
+ngx-datatable[_aio-47EB0463] {
+	margin-top:20px;
+}

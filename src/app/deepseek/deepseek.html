@@ -1,0 +1,61 @@
+<ion-header _aio-8AE3AFE7>
+    <ion-toolbar _aio-84C48FFF #j_94>
+        <ion-buttons #j_95 _aio-B70E3030 slot="start" collapse="true">
+            <ion-back-button _aio-C83A5BC9 #j_96>
+            </ion-back-button>
+        </ion-buttons>
+        <ion-title _aio-5B27CDA1 #j_97>
+            DeepSeek
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content _aio-8E3F6C34 #content="" #_aio_content>
+    <div _aio-EC4298A0 #j_74 *ngFor="let message of $v.chatMessages">
+        <div _aio-A4103C39 #j_75 *ngIf="message.role == 'assistant'">
+            <ion-note _aio-3584FA32 #j_76>
+                DeepSeek
+            </ion-note>
+            <ion-note _aio-8E65C1C7 #j_77 *ngIf="message?.time">
+                {{message.time}}
+            </ion-note>
+            <markdown _aio-1E465AC8 #j_78 *ngIf="message?.content" [data]="message.content">
+            </markdown>
+        </div>
+        <div _aio-4EC7A884 #j_79 *ngIf="message.role == 'user'">
+            <div _aio-941BB03A #j_80>
+                <ion-note _aio-878126E6 #j_81>
+                    me
+                </ion-note>
+                <ion-note _aio-CD9225BF #j_82>
+                    {{message.time}}
+                </ion-note>
+                <div _aio-1F53BBFA #j_83>
+                    {{message.content}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div _aio-48DB88F3 #j_84 *ngIf="isWait">
+        <ion-note _aio-4428B298 #j_85>
+            DeepSeek
+        </ion-note>
+        <ion-skeleton-text _aio-F86942B8 #j_86 [animated]="true">
+        </ion-skeleton-text>
+    </div>
+    <aio-tester-buttons slot="fixed">
+    </aio-tester-buttons>
+</ion-content>
+<ion-footer _aio-72F185DA>
+    <ion-toolbar _aio-DAA0C115 #j_88>
+        <ion-input _aio-B396563B #j_90 name="Input1" placeholder="Enter text" [(ngModel)]="text"
+        (keyup.enter)="sendMessage()">
+        </ion-input>
+        <ion-buttons #j_91 _aio-E6DCF817 slot="end" collapse="true">
+            <ion-button _aio-4E33E544 #j_92 fill="clear" [disabled]="__getMapping(currentItem, 'j_92__disabled', !text, undefined, true)"
+            (click)="sendMessage()">
+                <ion-icon _aio-4E33E544 #j_92__icon name="send-sharp" slot="icon-only">
+                </ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-footer>

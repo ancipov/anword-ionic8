@@ -1,0 +1,31 @@
+<ion-header _aio-17A56F2E>
+    <ion-toolbar _aio-C6729948 #j_250>
+        <ion-title _aio-54550A57 #j_251 color="dark">
+            {{ 'Image Cropper' | translate }}
+        </ion-title>
+        <ion-buttons #j_252 _aio-7880C20A slot="end" collapse="true">
+            <ion-button _aio-9330A732 #j_253 expand="block" (click)="$a.closeModal()">
+                {{ 'Close' | translate }}
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content _aio-6F6588DA class="ion-padding" #_aio_content>
+    <image-cropper _aio-860BE308 #j_246 class="cropper-container" [imageBase64]="img"
+    format="jpeg" [autoCrop]="false" [canvasRotation]="angle" [roundCropper]="roundCropper"
+    [maintainAspectRatio]="maintainAspectRatio">
+        <ion-icon _aio-8930F647 #j_247 name="arrow-undo-outline" size="large" color="primary"
+        class="toleft" (click)="rotate(false)">
+        </ion-icon>
+        <ion-icon _aio-66C759DA #j_248 name="arrow-redo-outline" size="large" color="primary"
+        class="toright" (click)="rotate(true)">
+        </ion-icon>
+    </image-cropper>
+</ion-content>
+<ion-footer _aio-EBD809C1>
+    <ion-button _aio-53EFB92D #j_255 expand="block" (click)="crop()">
+        <ion-icon _aio-53EFB92D #j_255__icon name="crop-sharp" slot="start">
+        </ion-icon>
+        {{ 'Crop' | translate }}
+    </ion-button>
+</ion-footer>

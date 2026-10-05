@@ -1,0 +1,118 @@
+<ion-header _aio-DD43D9ED>
+    <ion-toolbar _aio-995C5C35 #j_729>
+        <ion-buttons #j_730 _aio-AB47C586 slot="start" collapse="true">
+            <ion-back-button _aio-03ABAB67 #j_731 color="primary">
+            </ion-back-button>
+        </ion-buttons>
+        <ion-title _aio-9761BCCC #j_732>
+            {{ 'Dictionary' | translate }}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content _aio-B7F5B7ED class="ion-padding" #_aio_content>
+    <form _aio-9D819C03 #itemForm="ngForm" viewchild_name='itemForm' #itemForm_el [aioFormChange]="itemForm">
+        <ion-item #j_701 _aio-2268F9C7>
+            <ion-input labelPlacement="stacked" _aio-B7095EB9 #j_703="ngModel" #j_703_el name="Input1"
+            placeholder="{{ 'Enter text' | translate }}" required="true" aioControlValidation="maxLength:255"
+            aioValidationShowMessage="true" [(ngModel)]="item.name">
+                <ion-label _aio-0F68E660 #j_702 slot="label">
+                    {{ 'Name *' | translate }}
+                </ion-label>
+            </ion-input>
+        </ion-item>
+        <ion-item #j_704 _aio-9AF705C5>
+            <ion-input labelPlacement="stacked" _aio-415651C1 #j_706="ngModel" #j_706_el name="Input1_copy"
+            placeholder="{{ 'Enter text' | translate }}" required="false" aioControlValidation="maxLength:255"
+            aioValidationShowMessage="true" [(ngModel)]="item.description">
+                <ion-label _aio-17969E4E #j_705 slot="label">
+                    {{ 'Description' | translate }}
+                </ion-label>
+            </ion-input>
+        </ion-item>
+        <ion-grid _aio-3B6B7C85 #j_707>
+            <ion-row _aio-18EC28B3 #j_708>
+                <ion-col _aio-CE6C94E2 #j_709 size="6">
+                    <ion-item _aio-B821EF3F #j_710>
+                        <ion-label _aio-5A2C5F12 #j_711 class="label-header" position="stacked">
+                            {{ 'From *' | translate }}
+                        </ion-label>
+                        <component-selectable-search #j_712 [itemValueField]="'value'" name="selectValue"
+                        [itemTextField]="'name'" [selectObject]="false" [items]="languages" [placeholder]="'Select Lang'"
+                        [canSearch]="true" [(ngModel)]="item.from" style="width: 100%;" name="sdfds">
+                        </component-selectable-search>
+                    </ion-item>
+                </ion-col>
+                <ion-col _aio-7BD025E3 #j_713 size="6">
+                    <ion-item _aio-C6A52FEF #j_714>
+                        <ion-label _aio-A080DB94 #j_715 class="label-header" position="stacked">
+                            {{ 'To *' | translate }}
+                        </ion-label>
+                        <component-selectable-search #j_716 [itemValueField]="'value'" name="selectValue2"
+                        [itemTextField]="'name'" [selectObject]="false" [items]="languages" [placeholder]="'Select Lang'"
+                        [canSearch]="true" [(ngModel)]="item.to" style="width: 100%;" name="sss">
+                        </component-selectable-search>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </form>
+    <ion-searchbar _aio-BA2AD6EA #j_717 placeholder="{{ 'Search' | translate }}" *ngIf="item?.words?.length"
+    [(ngModel)]="keyword">
+    </ion-searchbar>
+    <ion-list _aio-44B97585 #j_718 #list="">
+        <ion-item-sliding #j_719__sliding *ngFor="let word of item.words">
+            <ion-item _aio-02E106A9 #j_719 button="true" detail="false" [routerLink]="['/pages/dictionaries', item._id]"
+            (click)="select(word)" [hidden]="!$a.hasString(word[0], keyword) && !$a.hasString(word[1], keyword)">
+                <ion-label _aio-C146C8DD #j_720>
+                    <div _aio-105A7739 #j_721>
+                        {{word[0]}}
+                    </div>
+                    <ion-note _aio-ADEEE023 #j_722>
+                        {{word[1]}}
+                    </ion-note>
+                </ion-label>
+                <ion-button _aio-915FCAC2 #j_723 expand="block" fill="clear" *ngIf="false" (click)="deleteWord(word, $event, list)">
+                    <ion-icon _aio-915FCAC2 #j_723__icon name="trash-bin-outline" slot="icon-only">
+                    </ion-icon>
+                </ion-button>
+            </ion-item>
+            <ion-item-options _aio-97208BF2 #j_724 side="end">
+                <ion-item-option _aio-50AC2ED4 #j_725 color="danger" (click)="deleteWord(word, $event, list)">
+                    <ion-icon #j_725__icon slot="icon-only" name="trash-bin-sharp">
+                    </ion-icon>
+                    {{ 'Delete' | translate }}
+                </ion-item-option>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+    <ion-fab _aio-176BEE86 #j_726 slot="fixed" horizontal="end" vertical="bottom" (click)="add()"
+    [class.aio-disabled]="$a.offline">
+        <ion-button _aio-A8AD8BBB #j_727 expand="block" shape="round">
+            <ion-icon _aio-A8AD8BBB #j_727__icon name="add-sharp" slot="start">
+            </ion-icon>
+            {{ 'Add' | translate }}
+        </ion-button>
+    </ion-fab>
+    <aio-tester-buttons slot="fixed">
+    </aio-tester-buttons>
+</ion-content>
+<ion-footer _aio-7C9EEEAD>
+    <ion-grid _aio-CE232E34 #j_734>
+        <ion-row _aio-0824C601 #j_735>
+            <ion-col _aio-3045BD1F #j_736 size="auto">
+                <ion-button _aio-6A6B7CAE #j_737 color="secondary" (click)="importWords()">
+                    <ion-icon _aio-6A6B7CAE #j_737__icon name="arrow-up-outline">
+                    </ion-icon>
+                </ion-button>
+            </ion-col>
+            <ion-col _aio-BC4D181D #j_738>
+                <ion-button _aio-1CD4B73D #j_739 expand="block" [disabled]="__getMapping(currentItem, 'j_739__disabled', $a.offline, undefined, true)"
+                (click)="save()">
+                    <ion-icon _aio-1CD4B73D #j_739__icon name="save-sharp" slot="start">
+                    </ion-icon>
+                    {{ 'Save' | translate }}
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

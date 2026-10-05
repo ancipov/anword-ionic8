@@ -1,0 +1,70 @@
+<ion-header _aio-F1A4AE0B>
+    <ion-toolbar _aio-E3E0B90A #j_690>
+        <ion-buttons #j_691 _aio-5B1D7364 slot="start" collapse="true">
+            <ion-back-button _aio-6260FC71 #j_692>
+            </ion-back-button>
+        </ion-buttons>
+        <ion-buttons #j_693 _aio-B380E810 slot="end" collapse="true">
+            <ion-menu-button _aio-DB894242 #j_694>
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title _aio-02291D8D #j_695>
+            {{ 'Settings' | translate }}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content _aio-3CFD7CE6 class="ion-padding" #_aio_content>
+    <ion-item #j_674 _aio-DAC47ADA>
+        <ion-toggle _aio-213A7C65 #j_676 value="Dark" name="Toggle1" [(ngModel)]="$v.settings.darkMode"
+        (ionChange)="changeDarkMode()">
+            <ion-label _aio-B8A70368 #j_675>
+                {{ 'Dark Mode' | translate }}
+            </ion-label>
+        </ion-toggle>
+    </ion-item>
+    <ion-item #j_677 _aio-39452088 *ngIf="isBiometricAvailable">
+        <ion-toggle _aio-D89C1F91 #j_679 value="Dark" name="Toggle1_copy" [(ngModel)]="$v.settings.biometricLogin"
+        (ionChange)="changeBiometricLogin()">
+            <ion-label _aio-5BED2195 #j_678>
+                {{$a.isIOS() ? 'Face ID Login' : 'Biometric Login'}}
+            </ion-label>
+        </ion-toggle>
+    </ion-item>
+    <ion-item #j_680 _aio-13237DD2>
+        <ion-select _aio-D9741358 #j_682 cancelText="{{ 'Cancel' | translate }}" [compareWith]="$a.utils.selectCustomComparator"
+        name="SelectItemWrapper1" okText="{{ 'Ok' | translate }}" placeholder="{{ 'Select Language' | translate }}"
+        [(ngModel)]="$v.settings.lang" (ionChange)="changeLang()" label-placement="stacked"
+        [class.select-label-placement-stacked]="true">
+            <ion-label _aio-DF6C1121 #j_681 slot="label">
+                {{ 'Language' | translate }}
+            </ion-label>
+            <ion-select-option #j_683 value="en">
+                {{ 'English' | translate }}
+            </ion-select-option>
+            <ion-select-option #j_684 value="es">
+                {{ 'Spanish' | translate }}
+            </ion-select-option>
+        </ion-select>
+    </ion-item>
+    <div _aio-5D100C38 #j_685 class="ion-padding" *ngIf="version">
+        {{'Version:' | translate}} {{version}}
+    </div>
+    <ion-item #j_686 _aio-0E27A7F3 *ngFor="let item of settings | keyvalue">
+        <ion-input labelPlacement="stacked" _aio-7CF80BF8 #j_688 name="Input1" placeholder="Enter text"
+        [(ngModel)]="item.value" (ionChange)="saveSettings()">
+            <ion-label _aio-ED3E3DB1 #j_687 slot="label">
+                {{item.name}}
+            </ion-label>
+        </ion-input>
+    </ion-item>
+    <aio-tester-buttons slot="fixed">
+    </aio-tester-buttons>
+</ion-content>
+<ion-footer _aio-D60166FF class="ion-no-border">
+    <ion-button _aio-CC7D0469 #j_697 expand="block" fill="clear" color="danger" [disabled]="__getMapping(currentItem, 'j_697__disabled', $a.offline, undefined, true)"
+    (click)="removeUser()">
+        <ion-icon _aio-CC7D0469 #j_697__icon name="trash-bin-sharp" slot="start">
+        </ion-icon>
+        {{ 'Remove User' | translate }}
+    </ion-button>
+</ion-footer>

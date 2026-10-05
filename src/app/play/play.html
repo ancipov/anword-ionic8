@@ -1,0 +1,69 @@
+<ion-header _aio-63A1A0E9>
+    <ion-toolbar _aio-2CEE0D8B #j_66>
+        <ion-buttons #j_67 _aio-0ABEDDAD slot="start" collapse="true">
+            <ion-back-button _aio-F8D0A7D9 #j_68 (click)="back()">
+            </ion-back-button>
+        </ion-buttons>
+        <ion-title _aio-693A3B8C #j_69>
+            {{$v.dictionary?.name}}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content _aio-7E3453C7 class="ion-padding" #_aio_content>
+    <div _aio-CA57F1F1 #j_45 *ngIf="mode == 'recognition'">
+        <div _aio-AC8BA61D #j_46>
+            <span _aio-2EC6FDA3 #j_47>
+                {{dictionary.words?.length}} ({{i + 1}})
+            </span>
+        </div>
+        <div _aio-D2CA5C37 #j_48>
+            <span _aio-2C61EC29 #j_49>
+                {{successCount}}
+            </span>
+            <span _aio-B8138349 #j_50>
+                {{failedCount}}
+            </span>
+        </div>
+        <h1 _aio-7C235404 #j_51>
+            {{pair[0]}}
+        </h1>
+        <div _aio-27FD9A6E #j_52 class="custom-loading" *ngIf="!stopPlayFlag">
+            <div _aio-83545A01 #j_53 class="mic-wrapper">
+                <ion-icon _aio-B44F01D0 #j_54 name="mic">
+                </ion-icon>
+            </div>
+        </div>
+        <div _aio-5050D545 #j_55 *ngIf="stopPlayFlag">
+            <ion-icon _aio-41686727 #j_56 name="pause-sharp" size="large" color="primary">
+            </ion-icon>
+        </div>
+        <h1 _aio-3D08A02B #j_57>
+            Your Answer :
+        </h1>
+        <h1 _aio-978BBABB #j_58>
+            {{text}}
+        </h1>
+        <h1 _aio-234016AE #j_59 *ngIf="correctAnswer">
+            Correct Answer :
+        </h1>
+        <h1 _aio-0F320316 #j_60 *ngIf="correctAnswer">
+            {{correctAnswer}}
+        </h1>
+    </div>
+    <div _aio-6D3D30D2 #j_61 *ngIf="mode == 'stop'">
+        <img _aio-DC421D6A #j_62 src="assets/images/a_0912ebb2dd13add01de53c0e5397dc66.gif"
+        alt="Image error">
+    </div>
+    <div _aio-D6B83EE2 #j_63 *ngIf="mode == 'finish'">
+        <h1 _aio-7BC4294D #j_64>
+            Dictionary is finished
+        </h1>
+    </div>
+    <aio-tester-buttons slot="fixed">
+    </aio-tester-buttons>
+</ion-content>
+<ion-footer _aio-E8BB26F8 class="ion-padding" *ngIf="mode != 'finish'">
+    <ion-button _aio-BED9DDA7 #j_71 expand="block" (click)="stopPlay()">
+        {{stopPlayFlag ? 'Play' : 'Pause'}}
+    </ion-button>
+</ion-footer>

@@ -1,0 +1,71 @@
+<ion-content _aio-ADBEC52E class="ion-padding" #_aio_content>
+    <form _aio-05C906EE #signupForm="ngForm" viewchild_name='signupForm' #signupForm_el
+    [aioFormChange]="signupForm">
+        <h1 _aio-66DDD271 #j_408>
+            {{ 'Sign up' | translate }}
+        </h1>
+        <ion-item #j_409 _aio-7BE96AB8>
+            <ion-input labelPlacement="stacked" _aio-0837FEA9 #j_411="ngModel" #j_411_el name="FirstNameInput"
+            placeholder="{{ 'Enter Firstname' | translate }}" type="text" required="true" aioControlValidation
+            aioValidationShowMessage="true" [(ngModel)]="item.firstName">
+                <ion-label _aio-62D21CC9 #j_410 slot="label" color="primary">
+                    {{ 'Firstname' | translate }}
+                </ion-label>
+            </ion-input>
+        </ion-item>
+        <ion-item #j_412 _aio-DEA0EAB0>
+            <ion-input labelPlacement="stacked" _aio-41E6DC8A #j_414="ngModel" #j_414_el name="LastNameInput"
+            placeholder="{{ 'Enter Lastname' | translate }}" type="text" required="true" aioControlValidation
+            aioValidationShowMessage="true" [(ngModel)]="item.lastName">
+                <ion-label _aio-E99E83F9 #j_413 slot="label" color="primary">
+                    {{ 'Lastname' | translate }}
+                </ion-label>
+            </ion-input>
+        </ion-item>
+        <ion-item #j_415 _aio-A407D210>
+            <ion-input labelPlacement="stacked" _aio-49A53E6E #j_417="ngModel" #j_417_el autocomplete="new-password"
+            name="EmailInput" placeholder="{{ 'Enter Email' | translate }}" type="email" required="true"
+            aioControlValidation="email" aioValidationShowMessage="true" [(ngModel)]="item.username">
+                <ion-label _aio-C08D8337 #j_416 slot="label" color="primary">
+                    {{ 'Username(email)' | translate }}
+                </ion-label>
+            </ion-input>
+        </ion-item>
+        <ion-item #j_418 _aio-AADFBC5F [aioPasswordShow]>
+            <ion-input labelPlacement="stacked" _aio-1047B8B9 #j_420="ngModel" #j_420_el autocomplete="new-password"
+            clearOnEdit="false" name="Input1" placeholder="{{ 'Enter Password' | translate }}"
+            type="password" required="true" aioControlValidation="strongPassword" aioValidationShowMessage="true"
+            [(ngModel)]="item.password">
+                <ion-label _aio-965E15FF #j_419 slot="label" color="primary">
+                    {{ 'Password' | translate }}
+                </ion-label>
+                <ion-icon name="eye" slot="end" data-action="show-hide">
+                </ion-icon>
+            </ion-input>
+        </ion-item>
+        <div _aio-C263C7E9 #j_421>
+            {{ 'By signed up you accept the' | translate }}
+        </div>
+        <ion-text _aio-FEA7C8BE #j_422 color="primary" [routerLink]="['/privacypolicy']">
+            {{ 'Privacy Policy' | translate }}
+        </ion-text>
+        <ion-text _aio-FC1EA6D9 #j_423>
+            {{ 'and' | translate }}
+        </ion-text>
+        <ion-text _aio-29815323 #j_424 color="primary" [routerLink]="['/termsofservices']">
+            {{ 'Terms of Services' | translate }}
+        </ion-text>
+        <ion-button _aio-BBEC1639 #j_425 expand="block" type="submit" [disabled]="__getMapping(currentItem, 'j_425__disabled', $a.offline, undefined, true)"
+        (click)="signup()">
+            {{ 'Sign up' | translate }}
+        </ion-button>
+        <ion-text _aio-A03CDC29 #j_426>
+            {{ 'Already have an account?' | translate }}
+        </ion-text>
+        <ion-text _aio-ED9FD8D6 #j_427 routerDirection="back" color="primary" [routerLink]="['/login']">
+            {{ 'Sign in' | translate }}
+        </ion-text>
+    </form>
+    <aio-tester-buttons slot="fixed">
+    </aio-tester-buttons>
+</ion-content>

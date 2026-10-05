@@ -1,0 +1,28 @@
+<ion-header _aio-4CFBD449>
+    <ion-toolbar _aio-8151970E #j_194 color="dark">
+        <ion-select _aio-27497702 #j_196 cancelText="{{ 'CANCEL' | translate }}" interface="popover"
+        [compareWith]="$a.utils.selectCustomComparator" name="Select1" okText="{{ 'OK' | translate }}"
+        placeholder="{{ 'Select Camera' | translate }}" [(ngModel)]="selectedCamera" (ionChange)="changeCamera()"
+        [class.select-label-placement-stacked]="true" [class.aio-no-wrapper]="true" [interfaceOptions]="{size: 'cover'}">
+            <ion-select-option #j_197 value="{{camera.deviceId}}" *ngFor="let camera of cameras">
+                {{camera.label}}
+            </ion-select-option>
+        </ion-select>
+        <ion-buttons #j_198 _aio-0B41521B slot="end" collapse="true">
+            <ion-button _aio-0525356F #j_199 expand="block" (click)="$a.closeModal()">
+                {{ 'Close' | translate }}
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content _aio-0475F081 class="ion-padding" color="dark" #_aio_content>
+    <ion-button _aio-DAAA8CB2 #j_189 expand="block" shape="round" (click)="takePhoto()">
+        {{ 'Take Photo' | translate }}
+    </ion-button>
+    <video _aio-E6506208 #j_190 autoplay="" playsinline="" id="webcam">
+    </video>
+    <canvas _aio-EBE9F09A #j_191 class="d-none" id="canvas">
+    </canvas>
+    <audio _aio-A19D4808 #j_192 preload="auto" src="audio/snap.wav" id="snapSound">
+    </audio>
+</ion-content>

@@ -1,0 +1,44 @@
+
+/* Styles properties */
+ion-grid[_aio-2555B97D] {
+	height: 100%;
+}
+ion-row[_aio-6E45B517] {
+	height: 5%;
+}
+div[_aio-ED5142B5] {
+	display: inline-block;
+	background-color: var(--ion-color-dark);
+	opacity: 0.06;
+	border-top-left-radius: 100px;
+	border-top-right-radius: 100px;
+	border-bottom-left-radius: 100px;
+	border-bottom-right-radius: 100px;
+	width: 64px;
+	height: 10px;
+}
+ion-row[_aio-95FE836E] {
+	height: 10%;
+}
+ion-text[_aio-9D4A9070] {
+	font-size: 34px;
+}
+ion-row[_aio-98AF1CD0] {
+	height: 85%;
+}
+div[_aio-A684156B] {
+	text-align: center;
+}
+div[_aio-424D5EE7] {
+	display: inline-block;
+}
+h1[_aio-23606731] {
+	font-size: 34px;
+}
+ion-footer[_aio-FC58ABBC] {
+	text-align:center;
+}
+ion-button[_aio-B8934555] {
+	margin-bottom: 20px;
+	width: 200px;
+}

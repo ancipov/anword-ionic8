@@ -1,0 +1,19 @@
+<ion-content _aio-1A5B4987 class="aio-vertical-align-center ion-padding" [class.aio-disabled]="$a.offline"
+#_aio_content>
+    <div class="aio-vertical-align-wrapper">
+        <h1 _aio-144CAF9B #j_755>
+            {{ 'Enter confirmation code' | translate }}
+        </h1>
+        <code-input _aio-0D1C281C #j_756 [code]="code" [isCodeHidden]="true" [codeLength]="5"
+        (codeCompleted)="onCodeCompleted($event)">
+        </code-input>
+        <ion-button _aio-C0D6669D #j_757 expand="block" (click)="resend()">
+            {{ 'Resent Code' | translate }}
+        </ion-button>
+        <a _aio-4781222A #j_758 (click)="$a.navigation.root(&quot;login&quot;, [], {replaceUrl: true})">
+        {{ 'Back to Login screen' | translate }}
+        </a>
+    </div>
+    <aio-tester-buttons slot="fixed">
+    </aio-tester-buttons>
+</ion-content>

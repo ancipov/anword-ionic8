@@ -1,0 +1,66 @@
+
+
+
+
+/* Custom SCSS */
+:host {
+    ion-menu {
+        min-width: auto;
+        transition: width 1s, max-width 1s, min-width 1s;
+        .button-max {
+            display: none;
+        }
+        .button-min {
+            display: block;
+        }
+    }
+    ion-menu.minimized {
+        max-width: 60px;
+        width: 60px;
+        min-width: auto;
+        transition: width 1s, max-width 1s;
+        ion-list {
+            ion-icon {
+                margin-right: 0;
+            }
+        }
+        ion-item {
+            --inner-border-width: 0px;
+        }
+        ion-label {
+            display: none;
+        }
+        .button-max {
+            display: block;
+        }
+        .button-min {
+            display: none;
+        }
+        .copyrightlabel {
+            visibility: hidden
+        }
+        .removeminimazed {
+            display: none;
+        }
+        // ion-footer {
+        //     display: none;
+        // }
+    }
+    ion-item.selected {
+        --background: var(--ion-color-light);
+    }
+    
+    .menuheader {
+        border-width: 0;
+    }
+    
+    .ios {
+        .headeritem {
+            height: 42px;
+        }
+        
+        .menuheader {
+            border-bottom: 1px;
+        }
+    }
+}

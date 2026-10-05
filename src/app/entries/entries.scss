@@ -1,0 +1,21 @@
+
+
+
+
+/* Custom SCSS */
+:host ::ng-deep {
+    .ngx-datatable.bootstrap .datatable-footer {
+        background: var(--ion-color-light);
+        color: var(--color);
+    }
+    .ngx-datatable.bootstrap .datatable-body .datatable-body-row.datatable-row-even {
+        background-color: rgba(var(--ion-color-light-rgb), 0.5);
+    }
+    .ngx-datatable.bootstrap .datatable-footer .datatable-pager a {
+        color: var(--color);
+    }
+    .ngx-datatable.bootstrap .datatable-footer .datatable-pager ul li:not(.disabled).active a,
+    .ngx-datatable.bootstrap .datatable-footer .datatable-pager ul li:not(.disabled):hover a {
+        background-color: rgba(var(--ion-color-medium-rgb), 0.25);
+    }
+}

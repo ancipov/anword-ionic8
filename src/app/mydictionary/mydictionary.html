@@ -1,0 +1,31 @@
+<ion-header _aio-91706C34>
+    <ion-toolbar _aio-E3A7C785 #j_22>
+        <ion-buttons #j_23 _aio-A48A633C slot="end" collapse="true">
+            <ion-menu-button _aio-81A8281A #j_24>
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title _aio-047E2378 #j_25>
+            My Dictionary
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content _aio-402AC22B class="ion-padding" #_aio_content>
+    <ion-list _aio-191B0C90 #j_17>
+        <ion-item _aio-02F66AAA #j_18 [class.highlighted-text]="item.value >= 3" *ngFor="let item of $v.mydictionary.words | keyvalue">
+            <ion-label _aio-E67D8ED3 #j_19>
+                {{item.key}} - {{item.value}}
+            </ion-label>
+            <ion-button _aio-4E95847D #j_20 expand="block" color="danger" (click)="deleteItem(item, $event)">
+                <ion-icon _aio-4E95847D #j_20__icon name="trash-bin-outline" slot="icon-only">
+                </ion-icon>
+            </ion-button>
+        </ion-item>
+    </ion-list>
+    <aio-tester-buttons slot="fixed">
+    </aio-tester-buttons>
+</ion-content>
+<ion-footer _aio-EEB82CB3 class="ion-padding ion-no-border">
+    <ion-button _aio-6CD26994 #j_27 expand="block" (click)="deleteAll()">
+        Delete All
+    </ion-button>
+</ion-footer>

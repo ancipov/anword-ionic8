@@ -1,0 +1,85 @@
+<ion-header _aio-EAB9FC62>
+    <ion-toolbar _aio-363A1C4B #j_181>
+        <ion-buttons #j_182 _aio-9C59619E slot="end" collapse="true">
+            <ion-button _aio-B55DFD83 #j_183 expand="block" (click)="close()">
+                {{ 'Close' | translate }}
+            </ion-button>
+        </ion-buttons>
+        <ion-title _aio-19B6B64A #j_184>
+            {{ 'Entry' | translate }}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content _aio-09EA215C class="ion-padding" #_aio_content>
+    <form _aio-458186FA #itemForm="ngForm" viewchild_name='itemForm' #itemForm_el [aioFormChange]="itemForm">
+        <ion-item #j_157 _aio-1D4ED4A6>
+            <ion-input labelPlacement="stacked" _aio-C4108A9E #j_159="ngModel" #j_159_el name="Input1"
+            placeholder="{{ 'Enter text' | translate }}" required="true" aioControlValidation="maxLength:255"
+            aioValidationShowMessage="true" [(ngModel)]="item.name">
+                <ion-label _aio-E6FBC17B #j_158 slot="label">
+                    {{ 'Name *' | translate }}
+                </ion-label>
+            </ion-input>
+        </ion-item>
+        <ion-item #j_160 _aio-E42542F0>
+            <ion-textarea labelPlacement="stacked" _aio-AAB99DF4 #j_162="ngModel" #j_162_el
+            placeholder="{{ 'Enter text' | translate }}" name="Textarea1" [(ngModel)]="item.description">
+                <ion-label _aio-9841270E #j_161 slot="label">
+                    {{ 'Description' | translate }}
+                </ion-label>
+            </ion-textarea>
+        </ion-item>
+    </form>
+    <ion-item #j_163 _aio-400D85FA>
+        <ion-label _aio-C05C8F7E #j_164>
+            {{ 'Date' | translate }}
+        </ion-label>
+        <aio-datetime _aio-FB2F24F7 #j_165 placeholder="{{ 'Select date' | translate }}"
+        name="Datetime1" presentation="date" [formatOptions]='' hasButtons="true" showStyle='grid'
+        [(ngModel)]="item.date">
+            <ion-datetime [showDefaultButtons]="true" presentation="date" firstDayOfWeek="0">
+            </ion-datetime>
+        </aio-datetime>
+    </ion-item>
+    <ion-grid _aio-C6940A3F #j_166>
+        <ion-row _aio-34446389 #j_167>
+            <ion-col _aio-8EBD06BA #j_168>
+                <aio-file-picker _aio-0993A28F #j_169 type="button" showCount="false" showFiles="false"
+                showRemoveIcon="true" name="FilePicker1" accept="image/*" buttonText="{{ 'File' | translate }}"
+                [(ngModel)]="file" (ionChange)="selectFile()">
+                </aio-file-picker>
+            </ion-col>
+            <ion-col _aio-A17188FA #j_171>
+                <ion-button _aio-7F774E2E #j_172 expand="block" (click)="camera()">
+                    {{ 'Camera' | translate }}
+                </ion-button>
+            </ion-col>
+            <ion-col _aio-947435A8 #j_173 *ngIf="$a.isMobile()">
+                <ion-button _aio-458467C1 #j_174 expand="block" (click)="scanDocument()">
+                    {{ 'Document' | translate }}
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <swiper-container _aio-DC31E902 #j_175 loop="true" pagination-clickable="true" pagination="true"
+    *ngIf="item.images.length" slides-per-view="1" #swiper="">
+        <swiper-slide _aio-8BE2C743 #j_176 *ngFor="let image of item.images">
+            <img _aio-6A2A4131 #j_177 src="{{image.fileurl}}" alt="{{ 'Image error' | translate }}">
+            <ion-button _aio-D0CE9CF1 #j_178 expand="block" fill="clear" color="danger" (click)="removeImage(image)">
+                <ion-icon _aio-D0CE9CF1 #j_178__icon name="trash-bin-outline" slot="icon-only">
+                </ion-icon>
+            </ion-button>
+        </swiper-slide>
+    </swiper-container>
+    <h5 _aio-241039F8 #j_179 *ngIf="!item.images.length">
+        {{ 'No images' | translate }}
+    </h5>
+</ion-content>
+<ion-footer _aio-5179D473>
+    <ion-button _aio-4CF8A640 #j_186 expand="block" [disabled]="__getMapping(currentItem, 'j_186__disabled', $a.offline, undefined, true)"
+    (click)="save()">
+        <ion-icon _aio-4CF8A640 #j_186__icon name="save-sharp" slot="start">
+        </ion-icon>
+        {{ 'Save' | translate }}
+    </ion-button>
+</ion-footer>

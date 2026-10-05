@@ -1,0 +1,30 @@
+
+/* Styles properties */
+ion-button[_aio-DAAA8CB2] {
+	position: absolute;
+	right: 0px;
+	bottom: 20px;
+	left: 0px;
+	width: 200px;
+}
+ion-button[_aio-DAAA8CB2] {
+	margin-left:auto;
+	margin-right:auto;
+	z-index:999;
+}
+video[_aio-E6506208] {
+	width: 100%;
+}
+canvas[_aio-EBE9F09A] {
+	width: 100%;
+}
+ion-toolbar[_aio-8151970E] {
+	--padding-start: 10px;
+}
+ion-select[_aio-27497702] {
+	border-width:1px;
+	border-style:solid;
+	padding-right:10px;
+	border-color:var(--ion-color-primary);
+	border-radius:20px;
+}

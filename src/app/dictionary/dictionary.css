@@ -1,0 +1,69 @@
+
+/* Styles properties */
+ion-content[_aio-B7F5B7ED] {
+	max-width: 800px;
+	align-self: center;
+}
+[_aio-0F68E660] {
+	font-weight: bold;
+}
+[_aio-17969E4E] {
+	font-weight: normal;
+}
+ion-grid[_aio-3B6B7C85] {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+ion-col[_aio-CE6C94E2] {
+	padding-left: 0px;
+}
+ion-label[_aio-5A2C5F12] {
+	font-weight: bold;
+}
+ion-col[_aio-7BD025E3] {
+	padding-right: 0px;
+}
+ion-label[_aio-A080DB94] {
+	font-weight: bold;
+}
+div[_aio-105A7739] {
+	font-weight: 600;
+	color: var(--ion-color-dark);
+}
+ion-button[_aio-915FCAC2]::part(native) {
+	color: var(--ion-color-danger);
+}
+ion-button>ion-icon[_aio-915FCAC2] {
+	width: 30px;
+	height: 30px;
+}
+ion-footer[_aio-7C9EEEAD] {
+	padding-top: 16px;
+	padding-right: 16px;
+	padding-bottom: 16px;
+	padding-left: 16px;
+}
+ion-footer[_aio-7C9EEEAD] {
+	text-align:center;
+}
+ion-grid[_aio-CE232E34] {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	width: 100%;
+	max-width: 800px;
+}
+ion-grid[_aio-CE232E34] {
+	display:inline-block;
+}

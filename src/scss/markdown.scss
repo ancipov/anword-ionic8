@@ -1,0 +1,20 @@
+@import 'prismjs/themes/prism-okaidia.css';
+@import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+@import 'prismjs/plugins/line-highlight/prism-line-highlight.css';
+@import 'prismjs/plugins/command-line/prism-command-line.css';
+
+markdown {
+    h1 a {
+        text-decoration: none;
+    }
+    h1 a:hover {
+        opacity: 0.87;
+        text-decoration: underline;
+    }
+    blockquote {
+        border-left: 3px solid rgba(0, 0, 0, 0.21);
+        padding-left: 12px;
+        color: rgba(0, 0, 0, 0.54);
+        margin-left: 0;
+    }
+}

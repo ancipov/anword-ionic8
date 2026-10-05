@@ -1,0 +1,31 @@
+<ion-header _aio-44A61203>
+    <ion-toolbar _aio-C3B45316 #j_748>
+        <ion-title _aio-5985BFF6 #j_750>
+            Text Recognition
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content _aio-4ED70D2C class="ion-padding" #_aio_content>
+    <ion-item #j_742 _aio-89A37E4F *ngIf="languages?.length">
+        <ion-select _aio-47FAA4A3 #j_744 cancelText="CANCEL" [compareWith]="$a.utils.selectCustomComparator"
+        name="Select1" okText="OK" placeholder="Select Language" [(ngModel)]="lang" label-placement="stacked"
+        [class.select-label-placement-stacked]="true">
+            <ion-label _aio-8718A302 #j_743 slot="label">
+                Language
+            </ion-label>
+            <ion-select-option #j_745 value="{{item}}" *ngFor="let item of languages">
+                {{getLanguageLabel(item)}}
+            </ion-select-option>
+        </ion-select>
+    </ion-item>
+    <h1 _aio-E1342C85 #j_746>
+        {{message}}
+    </h1>
+    <aio-tester-buttons slot="fixed">
+    </aio-tester-buttons>
+</ion-content>
+<ion-footer _aio-7558F085 class="ion-padding ion-no-border">
+    <ion-button _aio-306B6C23 #j_752 expand="block" (click)="recognize()">
+        Recognize
+    </ion-button>
+</ion-footer>

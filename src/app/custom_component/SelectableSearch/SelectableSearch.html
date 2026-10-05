@@ -1,0 +1,11 @@
+<ng-container _aio-6C0D0F5C #j_306 aioCustomMarkAsTouched="">
+    <ionic-selectable _aio-226845C1 #j_307 #selectInput="" itemValueField="{{itemValueField}}"
+    name="selectsearch" (onInfiniteScroll)="getMoreItems($event)" [items]="showItems"
+    [(ngModel)]="selectedItem" [hasInfiniteScroll]="true" [canSearch]="canSearch" aioMarkAsTouched=""
+    (onSearch)="searchItems($event)" aioValidationShowMessage="" placeholder="{{placeholder | translate}}"
+    aioControlValidation="" (onChange)="onChangeEvent($event)" itemTextField="{{itemTextField}}">
+    </ionic-selectable>
+    <div _aio-5E3D5E50 #j_308 *ngIf="isFailedRequired">
+        Value of the field is required
+    </div>
+</ng-container>
